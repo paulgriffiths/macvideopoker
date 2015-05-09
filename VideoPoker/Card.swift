@@ -10,7 +10,7 @@ public func ==(first: Card, second: Card) -> Bool {
     return first.index == second.index
 }
 
-public class Card: Equatable, Printable {
+public struct Card: Equatable, Printable {
     let rank: Rank
     let suit: Suit
     let index: Int

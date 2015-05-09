@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Paul Griffiths. All rights reserved.
 //
 
-class RankCounter {
+struct RankCounter {
     private var ranks: [Rank : Int] = [:]
     
     init(cardList: CardList) {
@@ -19,7 +19,7 @@ class RankCounter {
         return ranks.count
     }
     
-    private func countCard(card: Card) {
+    mutating private func countCard(card: Card) {
         if let count = ranks[card.rank] {
             ranks[card.rank] = count + 1
         }

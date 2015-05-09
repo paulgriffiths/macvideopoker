@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Paul Griffiths. All rights reserved.
 //
 
-class CardList: SequenceType, Printable {
+struct CardList: SequenceType, Printable {
     private var cards: [Card] = []
     
     init() {
@@ -18,6 +18,16 @@ class CardList: SequenceType, Printable {
     }
     
     init(cards: Cards...) {
+        for card in cards {
+            self.cards.append(card.card)
+        }
+    }
+    
+    init(cards: [Card]) {
+        self.cards.extend(cards)
+    }
+    
+    init(cards: [Cards]) {
         for card in cards {
             self.cards.append(card.card)
         }
@@ -58,6 +68,10 @@ class CardList: SequenceType, Printable {
         set {
             cards[index] = newValue
         }
+    }
+    
+    mutating func clear() {
+        cards.removeAll(keepCapacity: false)
     }
     
     func generate() -> IndexingGenerator<[Card]> {

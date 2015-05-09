@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Paul Griffiths. All rights reserved.
 //
 
-class SuitCounter {
+struct SuitCounter {
     private var suits: [Suit : Int] = [:]
     
     init(cardList: CardList) {
@@ -19,7 +19,7 @@ class SuitCounter {
         return suits.count
     }
     
-    private func countCard(card: Card) {
+    mutating private func countCard(card: Card) {
         if let count = suits[card.suit] {
             suits[card.suit] = count + 1
         }

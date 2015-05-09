@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Paul Griffiths. All rights reserved.
 //
 
-class CardCounter {
+struct CardCounter {
     
     private let suitCounter: SuitCounter
     private let rankCounter: RankCounter
@@ -18,6 +18,13 @@ class CardCounter {
         rankCounter = RankCounter(cardList: cardList)
         rankComboCounter = RankComboCounter(rankCounter: rankCounter)
         count = cardList.count
+    }
+    
+    init(hand: PokerHand) {
+        suitCounter = SuitCounter(cardList: hand.cards)
+        rankCounter = RankCounter(cardList: hand.cards)
+        rankComboCounter = RankComboCounter(rankCounter: rankCounter)
+        count = hand.count
     }
     
     var isEmpty: Bool {

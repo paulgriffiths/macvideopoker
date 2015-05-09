@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Paul Griffiths. All rights reserved.
 //
 
-class RankComboCounter {
+struct RankComboCounter {
     private var counts: [Int : Set<Rank>] = [:]
     
     init(rankCounter: RankCounter) {
