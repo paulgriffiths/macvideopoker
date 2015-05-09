@@ -11,37 +11,26 @@ import XCTest
 
 class SuitCounterTests: XCTestCase {
 
-    var counter: SuitCounter?
-    
-    override func setUp() {
-        super.setUp()
-        
-        counter = SuitCounter(list: CardList(cards: Cards.AceSpades.card, Cards.AceClubs.card,
-            Cards.FiveClubs.card, Cards.SixSpades.card, Cards.NineHearts.card, Cards.NineClubs.card,
-            Cards.NineSpades.card, Cards.QueenSpades.card))
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+    let counter: SuitCounter = SuitCounter(cardList: CardList(cards: Cards.AceSpades.card, Cards.AceClubs.card,
+        Cards.FiveClubs.card, Cards.SixSpades.card, Cards.NineHearts.card, Cards.NineClubs.card,
+        Cards.NineSpades.card, Cards.QueenSpades.card))
 
     func testCountForSuit() {
-        XCTAssertEqual(3, counter!.countForSuit(.Clubs))
-        XCTAssertEqual(1, counter!.countForSuit(.Hearts))
-        XCTAssertEqual(4, counter!.countForSuit(.Spades))
-        XCTAssertEqual(0, counter!.countForSuit(.Diamonds))
+        XCTAssertEqual(3, counter.countForSuit(.Clubs))
+        XCTAssertEqual(1, counter.countForSuit(.Hearts))
+        XCTAssertEqual(4, counter.countForSuit(.Spades))
+        XCTAssertEqual(0, counter.countForSuit(.Diamonds))
     }
     
     func testContainsSuit() {
-        XCTAssertTrue(counter!.containsSuit(.Clubs))
-        XCTAssertTrue(counter!.containsSuit(.Hearts))
-        XCTAssertTrue(counter!.containsSuit(.Spades))
-        XCTAssertFalse(counter!.containsSuit(.Diamonds))
+        XCTAssertTrue(counter.containsSuit(.Clubs))
+        XCTAssertTrue(counter.containsSuit(.Hearts))
+        XCTAssertTrue(counter.containsSuit(.Spades))
+        XCTAssertFalse(counter.containsSuit(.Diamonds))
     }
     
-    func testNumSuits() {
-        XCTAssertEqual(3, counter!.numSuits())
+    func testCount() {
+        XCTAssertEqual(3, counter.count)
     }
 
 }

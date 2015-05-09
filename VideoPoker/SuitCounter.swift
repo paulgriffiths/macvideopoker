@@ -9,10 +9,14 @@
 class SuitCounter {
     private var suits: [Suit : Int] = [:]
     
-    init(list: CardList) {
-        for card in list {
+    init(cardList: CardList) {
+        for card in cardList {
             countCard(card)
         }
+    }
+    
+    var count: Int {
+        return suits.count
     }
     
     private func countCard(card: Card) {
@@ -25,7 +29,7 @@ class SuitCounter {
     }
     
     func containsSuit(suit: Suit) -> Bool {
-        if let _ = suits[suit] {
+        if suits[suit] != nil {
             return true
         }
         else {
@@ -42,7 +46,4 @@ class SuitCounter {
         }
     }
     
-    func numSuits() -> Int {
-        return suits.count
-    }
 }

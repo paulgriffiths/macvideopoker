@@ -11,16 +11,6 @@ import XCTest
 
 class CardListTests: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     func testDefaultInitializer() {
         let list = CardList()
         XCTAssertTrue(list.isEmpty)
@@ -36,6 +26,7 @@ class CardListTests: XCTestCase {
         XCTAssertEqual(Cards.AceClubs.card, list[0])
         XCTAssertEqual(Cards.ThreeSpades.card, list[1])
         XCTAssertEqual(Cards.QueenDiamonds.card, list[2])
+        XCTAssertEqual("[AC,3S,QD]", list.description)
     }
     
     func testCardsInitializer() {
@@ -49,6 +40,7 @@ class CardListTests: XCTestCase {
         XCTAssertEqual(Cards.SixClubs.card, list[1])
         XCTAssertEqual(Cards.JackHearts.card, list[2])
         XCTAssertEqual(Cards.KingSpades.card, list[3])
+        XCTAssertEqual("[4D,6C,JH,KS]", list.description)
     }
     
     func testIteration() {

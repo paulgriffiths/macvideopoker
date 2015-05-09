@@ -9,10 +9,14 @@
 class RankCounter {
     private var ranks: [Rank : Int] = [:]
     
-    init(list: CardList) {
-        for card in list {
+    init(cardList: CardList) {
+        for card in cardList {
             countCard(card)
         }
+    }
+    
+    var count: Int {
+        return ranks.count
     }
     
     private func countCard(card: Card) {
@@ -25,7 +29,7 @@ class RankCounter {
     }
     
     func containsRank(rank: Rank) -> Bool {
-        if let _ = ranks[rank] {
+        if ranks[rank] != nil {
             return true
         }
         else {
@@ -42,7 +46,7 @@ class RankCounter {
         }
     }
     
-    func numRanks() -> Int {
-        return ranks.count
+    func ranksSet() -> Set<Rank> {
+        return Set<Rank>(ranks.keys)
     }
 }

@@ -11,15 +11,6 @@ import XCTest
 
 class SuitTests: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     func testSuitFromIndex() {
         XCTAssertEqual(Suit.Clubs, Suit.fromIndex(0))
         XCTAssertEqual(Suit.Hearts, Suit.fromIndex(1))

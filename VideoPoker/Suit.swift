@@ -10,7 +10,7 @@ public func ==(first: Suit, second: Suit) -> Bool {
     return first.rawValue == second.rawValue
 }
 
-public enum Suit: Int, Equatable {
+public enum Suit: Int, Equatable, Printable {
     case Clubs = 0
     case Hearts
     case Spades

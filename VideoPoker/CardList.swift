@@ -6,9 +6,7 @@
 //  Copyright (c) 2015 Paul Griffiths. All rights reserved.
 //
 
-import Foundation
-
-class CardList: SequenceType {
+class CardList: SequenceType, Printable {
     private var cards: [Card] = []
     
     init() {
@@ -23,6 +21,25 @@ class CardList: SequenceType {
         for card in cards {
             self.cards.append(card.card)
         }
+    }
+    
+    var description: String {
+        var string = "["
+        var separator: String?
+        
+        for card in cards {
+            if let sep = separator {
+                string += sep
+            }
+            else {
+                separator = ","
+            }
+            
+            string += card.shortDescription
+        }
+        
+        string += "]"
+        return string
     }
     
     var isEmpty: Bool {
