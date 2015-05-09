@@ -11,6 +11,23 @@
 		DA39A11E1AFDA43A002A0118 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA39A11D1AFDA43A002A0118 /* Images.xcassets */; };
 		DA39A1211AFDA43A002A0118 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA39A11F1AFDA43A002A0118 /* MainMenu.xib */; };
 		DA39A12D1AFDA43A002A0118 /* VideoPokerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A12C1AFDA43A002A0118 /* VideoPokerTests.swift */; };
+		DA39A1381AFDA450002A0118 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1361AFDA450002A0118 /* MainWindowController.swift */; };
+		DA39A1391AFDA450002A0118 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA39A1371AFDA450002A0118 /* MainWindowController.xib */; };
+		DA39A13D1AFDA4DA002A0118 /* Suit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A13C1AFDA4DA002A0118 /* Suit.swift */; };
+		DA39A13E1AFDA4DA002A0118 /* Suit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A13C1AFDA4DA002A0118 /* Suit.swift */; };
+		DA39A1401AFDA513002A0118 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A13F1AFDA513002A0118 /* Rank.swift */; };
+		DA39A1411AFDA513002A0118 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A13F1AFDA513002A0118 /* Rank.swift */; };
+		DA39A1431AFDA5AA002A0118 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1421AFDA5AA002A0118 /* Card.swift */; };
+		DA39A1441AFDA5AA002A0118 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1421AFDA5AA002A0118 /* Card.swift */; };
+		DA39A1461AFDA71D002A0118 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1451AFDA71D002A0118 /* Cards.swift */; };
+		DA39A1471AFDA71D002A0118 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1451AFDA71D002A0118 /* Cards.swift */; };
+		DA39A1491AFDA9C8002A0118 /* RankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1481AFDA9C8002A0118 /* RankTests.swift */; };
+		DA39A14B1AFDABBC002A0118 /* CardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A14A1AFDABBC002A0118 /* CardsTests.swift */; };
+		DA39A14D1AFDB20B002A0118 /* SuitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A14C1AFDB20B002A0118 /* SuitTests.swift */; };
+		DA39A14F1AFDB369002A0118 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A14E1AFDB369002A0118 /* CardTests.swift */; };
+		DA39A1511AFDBEA7002A0118 /* CardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1501AFDBEA7002A0118 /* CardList.swift */; };
+		DA39A1521AFDBEA7002A0118 /* CardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1501AFDBEA7002A0118 /* CardList.swift */; };
+		DA39A1541AFDC087002A0118 /* CardListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1531AFDC087002A0118 /* CardListTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +49,18 @@
 		DA39A1261AFDA43A002A0118 /* VideoPokerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoPokerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA39A12B1AFDA43A002A0118 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA39A12C1AFDA43A002A0118 /* VideoPokerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPokerTests.swift; sourceTree = "<group>"; };
+		DA39A1361AFDA450002A0118 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		DA39A1371AFDA450002A0118 /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		DA39A13C1AFDA4DA002A0118 /* Suit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suit.swift; sourceTree = "<group>"; };
+		DA39A13F1AFDA513002A0118 /* Rank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
+		DA39A1421AFDA5AA002A0118 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		DA39A1451AFDA71D002A0118 /* Cards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		DA39A1481AFDA9C8002A0118 /* RankTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankTests.swift; sourceTree = "<group>"; };
+		DA39A14A1AFDABBC002A0118 /* CardsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsTests.swift; sourceTree = "<group>"; };
+		DA39A14C1AFDB20B002A0118 /* SuitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuitTests.swift; sourceTree = "<group>"; };
+		DA39A14E1AFDB369002A0118 /* CardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
+		DA39A1501AFDBEA7002A0118 /* CardList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardList.swift; sourceTree = "<group>"; };
+		DA39A1531AFDC087002A0118 /* CardListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardListTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,10 +102,14 @@
 		DA39A1181AFDA43A002A0118 /* VideoPoker */ = {
 			isa = PBXGroup;
 			children = (
+				DA39A13B1AFDA4C8002A0118 /* Models */,
+				DA39A13A1AFDA4BB002A0118 /* Views */,
 				DA39A11B1AFDA43A002A0118 /* AppDelegate.swift */,
 				DA39A11D1AFDA43A002A0118 /* Images.xcassets */,
 				DA39A11F1AFDA43A002A0118 /* MainMenu.xib */,
 				DA39A1191AFDA43A002A0118 /* Supporting Files */,
+				DA39A1361AFDA450002A0118 /* MainWindowController.swift */,
+				DA39A1371AFDA450002A0118 /* MainWindowController.xib */,
 			);
 			path = VideoPoker;
 			sourceTree = "<group>";
@@ -92,6 +125,11 @@
 		DA39A1291AFDA43A002A0118 /* VideoPokerTests */ = {
 			isa = PBXGroup;
 			children = (
+				DA39A1531AFDC087002A0118 /* CardListTests.swift */,
+				DA39A14E1AFDB369002A0118 /* CardTests.swift */,
+				DA39A14C1AFDB20B002A0118 /* SuitTests.swift */,
+				DA39A14A1AFDABBC002A0118 /* CardsTests.swift */,
+				DA39A1481AFDA9C8002A0118 /* RankTests.swift */,
 				DA39A12C1AFDA43A002A0118 /* VideoPokerTests.swift */,
 				DA39A12A1AFDA43A002A0118 /* Supporting Files */,
 			);
@@ -104,6 +142,25 @@
 				DA39A12B1AFDA43A002A0118 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DA39A13A1AFDA4BB002A0118 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DA39A13B1AFDA4C8002A0118 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DA39A13C1AFDA4DA002A0118 /* Suit.swift */,
+				DA39A13F1AFDA513002A0118 /* Rank.swift */,
+				DA39A1421AFDA5AA002A0118 /* Card.swift */,
+				DA39A1451AFDA71D002A0118 /* Cards.swift */,
+				DA39A1501AFDBEA7002A0118 /* CardList.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA39A11E1AFDA43A002A0118 /* Images.xcassets in Resources */,
+				DA39A1391AFDA450002A0118 /* MainWindowController.xib in Resources */,
 				DA39A1211AFDA43A002A0118 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,7 +263,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA39A13D1AFDA4DA002A0118 /* Suit.swift in Sources */,
+				DA39A1401AFDA513002A0118 /* Rank.swift in Sources */,
+				DA39A1431AFDA5AA002A0118 /* Card.swift in Sources */,
+				DA39A1461AFDA71D002A0118 /* Cards.swift in Sources */,
+				DA39A1381AFDA450002A0118 /* MainWindowController.swift in Sources */,
 				DA39A11C1AFDA43A002A0118 /* AppDelegate.swift in Sources */,
+				DA39A1511AFDBEA7002A0118 /* CardList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +277,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA39A1471AFDA71D002A0118 /* Cards.swift in Sources */,
+				DA39A1411AFDA513002A0118 /* Rank.swift in Sources */,
+				DA39A1541AFDC087002A0118 /* CardListTests.swift in Sources */,
+				DA39A14D1AFDB20B002A0118 /* SuitTests.swift in Sources */,
+				DA39A14B1AFDABBC002A0118 /* CardsTests.swift in Sources */,
+				DA39A13E1AFDA4DA002A0118 /* Suit.swift in Sources */,
 				DA39A12D1AFDA43A002A0118 /* VideoPokerTests.swift in Sources */,
+				DA39A14F1AFDB369002A0118 /* CardTests.swift in Sources */,
+				DA39A1521AFDBEA7002A0118 /* CardList.swift in Sources */,
+				DA39A1441AFDA5AA002A0118 /* Card.swift in Sources */,
+				DA39A1491AFDA9C8002A0118 /* RankTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
