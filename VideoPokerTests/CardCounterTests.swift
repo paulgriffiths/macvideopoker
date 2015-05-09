@@ -240,7 +240,7 @@ class CardCounterTests: XCTestCase {
     }
     
     func testThreeCardNotWheelStraight() {
-        let sc = CardCounter(cardList: CardList(cards: Cards.AceHearts, Cards.ThreeSpades, Cards.FourDiamonds))
+        let sc = CardCounter(cardList: CardList(cards: Cards.AceHearts, Cards.ThreeSpades, Cards.ThreeDiamonds))
         XCTAssertFalse(sc.isStraight)
     }
     
