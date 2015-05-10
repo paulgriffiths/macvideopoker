@@ -52,6 +52,10 @@
 		DA39A1781AFE8EB1002A0118 /* PokerHandScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1771AFE8EB1002A0118 /* PokerHandScore.swift */; };
 		DA39A1791AFE8EB1002A0118 /* PokerHandScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1771AFE8EB1002A0118 /* PokerHandScore.swift */; };
 		DA39A17B1AFE972D002A0118 /* PokerHandEvaluationComparisonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A17A1AFE972D002A0118 /* PokerHandEvaluationComparisonTests.swift */; };
+		DA39A17D1AFEABE9002A0118 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A17C1AFEABE9002A0118 /* CardView.swift */; };
+		DA39A1801AFEB91B002A0118 /* PokerHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A17F1AFEB91B002A0118 /* PokerHandView.swift */; };
+		DA39A1821AFEE4C6002A0118 /* CardImagesSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1811AFEE4C6002A0118 /* CardImagesSource.swift */; };
+		DA39A1841AFEE54A002A0118 /* DefaultCardImagesSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1831AFEE54A002A0118 /* DefaultCardImagesSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +104,10 @@
 		DA39A1751AFE84C2002A0118 /* PokerHandEvaluationHandTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokerHandEvaluationHandTypeTests.swift; sourceTree = "<group>"; };
 		DA39A1771AFE8EB1002A0118 /* PokerHandScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokerHandScore.swift; sourceTree = "<group>"; };
 		DA39A17A1AFE972D002A0118 /* PokerHandEvaluationComparisonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokerHandEvaluationComparisonTests.swift; sourceTree = "<group>"; };
+		DA39A17C1AFEABE9002A0118 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		DA39A17F1AFEB91B002A0118 /* PokerHandView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokerHandView.swift; sourceTree = "<group>"; };
+		DA39A1811AFEE4C6002A0118 /* CardImagesSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardImagesSource.swift; sourceTree = "<group>"; };
+		DA39A1831AFEE54A002A0118 /* DefaultCardImagesSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCardImagesSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +200,10 @@
 		DA39A13A1AFDA4BB002A0118 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DA39A17C1AFEABE9002A0118 /* CardView.swift */,
+				DA39A17F1AFEB91B002A0118 /* PokerHandView.swift */,
+				DA39A1811AFEE4C6002A0118 /* CardImagesSource.swift */,
+				DA39A1831AFEE54A002A0118 /* DefaultCardImagesSource.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -318,12 +330,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA39A1561AFE3787002A0118 /* RankCounter.swift in Sources */,
+				DA39A1801AFEB91B002A0118 /* PokerHandView.swift in Sources */,
 				DA39A13D1AFDA4DA002A0118 /* Suit.swift in Sources */,
 				DA39A1651AFE6B39002A0118 /* CardCounter.swift in Sources */,
 				DA39A1401AFDA513002A0118 /* Rank.swift in Sources */,
 				DA39A1431AFDA5AA002A0118 /* Card.swift in Sources */,
 				DA39A15B1AFE4055002A0118 /* SuitCounter.swift in Sources */,
 				DA39A1701AFE7E07002A0118 /* PokerHands.swift in Sources */,
+				DA39A1821AFEE4C6002A0118 /* CardImagesSource.swift in Sources */,
 				DA39A1781AFE8EB1002A0118 /* PokerHandScore.swift in Sources */,
 				DA39A1461AFDA71D002A0118 /* Cards.swift in Sources */,
 				DA39A1381AFDA450002A0118 /* MainWindowController.swift in Sources */,
@@ -332,6 +346,8 @@
 				DA39A1511AFDBEA7002A0118 /* CardList.swift in Sources */,
 				DA39A1731AFE8012002A0118 /* PokerHandEvaluation.swift in Sources */,
 				DA39A16D1AFE7D9F002A0118 /* PokerHand.swift in Sources */,
+				DA39A17D1AFEABE9002A0118 /* CardView.swift in Sources */,
+				DA39A1841AFEE54A002A0118 /* DefaultCardImagesSource.swift in Sources */,
 				DA39A1601AFE42BB002A0118 /* RankComboCounter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

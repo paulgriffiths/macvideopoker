@@ -9,14 +9,26 @@
 import Cocoa
 
 class MainWindowController: NSWindowController {
+    
+    @IBOutlet weak var pokerHandView: PokerHandView?
 
     override func windowDidLoad() {
         super.windowDidLoad()
-
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     }
     
     override var windowNibName: String? {
         return "MainWindowController"
+    }
+    
+    @IBAction func enableButtonPressed(sender: NSButton) {
+        if let phv = pokerHandView {
+            phv.enabled = !phv.enabled
+            if phv.enabled {
+                sender.title = "Disable flipping"
+            }
+            else {
+                sender.title = "Enable flipping"
+            }
+        }
     }
 }
