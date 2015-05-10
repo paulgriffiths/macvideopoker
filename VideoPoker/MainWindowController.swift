@@ -8,6 +8,15 @@
 
 import Cocoa
 
+private func randomPokerHand() -> PokerHand {
+    var list = CardList()
+    for i in 0...4 {
+        let n = Int(arc4random_uniform(52))
+        list.append(Card(index: n))
+    }
+    return PokerHand(cardList: list)
+}
+
 class MainWindowController: NSWindowController {
     
     @IBOutlet weak var pokerHandView: PokerHandView?
@@ -15,12 +24,8 @@ class MainWindowController: NSWindowController {
     
     private var flippingEnabled: Bool = true {
         didSet {
-            if let phv = pokerHandView {
-                phv.enabled = flippingEnabled
-            }
-            if let flipButton = flipButton {
-                flipButton.title = (flippingEnabled ? "Disable flipping" : "Enable flipping")
-            }
+            pokerHandView?.enabled = flippingEnabled
+            flipButton?.title = flippingEnabled ? "Disable flipping" : "Enable flipping"
         }
     }
 
@@ -33,33 +38,18 @@ class MainWindowController: NSWindowController {
     }
     
     @IBAction func enableButtonPressed(sender: NSButton) {
-        if let phv = pokerHandView {
-            flippingEnabled = !flippingEnabled
-        }
+        flippingEnabled = !flippingEnabled
     }
     
     @IBAction func dealButtonPressed(sender: NSButton) {
-        if let phv = pokerHandView {
-            var list = CardList()
-            for i in 0...4 {
-                let n = Int(arc4random_uniform(52))
-                list.append(Card(index: n))
-            }
-            phv.hand = PokerHand(cardList: list)
-            if let flipButton = flipButton {
-                flipButton.enabled = true
-                flippingEnabled = true
-            }
-        }
+        flippingEnabled = true
+        pokerHandView?.hand = randomPokerHand()
+        flipButton?.enabled = true
     }
     
     @IBAction func discardButtonPressed(sender: NSButton) {
-        if let phv = pokerHandView {
-            phv.hand = nil
-            if let flipButton = flipButton {
-                flipButton.enabled = false
-                flippingEnabled = true
-            }
-        }
+        flippingEnabled = true
+        pokerHandView?.hand = nil
+        flipButton?.enabled = false
     }
 }
