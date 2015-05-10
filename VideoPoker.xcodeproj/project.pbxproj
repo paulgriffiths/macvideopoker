@@ -56,6 +56,8 @@
 		DA39A1801AFEB91B002A0118 /* PokerHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A17F1AFEB91B002A0118 /* PokerHandView.swift */; };
 		DA39A1821AFEE4C6002A0118 /* CardImagesSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1811AFEE4C6002A0118 /* CardImagesSource.swift */; };
 		DA39A1841AFEE54A002A0118 /* DefaultCardImagesSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1831AFEE54A002A0118 /* DefaultCardImagesSource.swift */; };
+		DA39A1861AFF1551002A0118 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1851AFF1551002A0118 /* Deck.swift */; };
+		DA39A1871AFF1551002A0118 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1851AFF1551002A0118 /* Deck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,7 @@
 		DA39A17F1AFEB91B002A0118 /* PokerHandView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokerHandView.swift; sourceTree = "<group>"; };
 		DA39A1811AFEE4C6002A0118 /* CardImagesSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardImagesSource.swift; sourceTree = "<group>"; };
 		DA39A1831AFEE54A002A0118 /* DefaultCardImagesSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCardImagesSource.swift; sourceTree = "<group>"; };
+		DA39A1851AFF1551002A0118 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +228,7 @@
 				DA39A16F1AFE7E06002A0118 /* PokerHands.swift */,
 				DA39A1721AFE8012002A0118 /* PokerHandEvaluation.swift */,
 				DA39A1771AFE8EB1002A0118 /* PokerHandScore.swift */,
+				DA39A1851AFF1551002A0118 /* Deck.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -329,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA39A1861AFF1551002A0118 /* Deck.swift in Sources */,
 				DA39A1561AFE3787002A0118 /* RankCounter.swift in Sources */,
 				DA39A1801AFEB91B002A0118 /* PokerHandView.swift in Sources */,
 				DA39A13D1AFDA4DA002A0118 /* Suit.swift in Sources */,
@@ -374,6 +379,7 @@
 				DA39A1681AFE6CE7002A0118 /* CardCounterTests.swift in Sources */,
 				DA39A12D1AFDA43A002A0118 /* VideoPokerTests.swift in Sources */,
 				DA39A15C1AFE4055002A0118 /* SuitCounter.swift in Sources */,
+				DA39A1871AFF1551002A0118 /* Deck.swift in Sources */,
 				DA39A14F1AFDB369002A0118 /* CardTests.swift in Sources */,
 				DA39A17B1AFE972D002A0118 /* PokerHandEvaluationComparisonTests.swift in Sources */,
 				DA39A1521AFDBEA7002A0118 /* CardList.swift in Sources */,

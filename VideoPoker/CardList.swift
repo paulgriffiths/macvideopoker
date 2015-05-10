@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Paul Griffiths. All rights reserved.
 //
 
+import Darwin
+
 struct CardList: SequenceType, Printable {
     private var cards: [Card] = []
     
@@ -68,6 +70,14 @@ struct CardList: SequenceType, Printable {
         append(card.card)
     }
     
+    mutating func append(cardList: CardList) {
+        cards.extend(cardList.cards)
+    }
+    
+    mutating func removeLast() -> Card {
+        return cards.removeLast()
+    }
+    
     subscript(index: Int) -> Card {
         get {
             return cards[index]
@@ -80,6 +90,13 @@ struct CardList: SequenceType, Printable {
     
     mutating func clear() {
         cards.removeAll(keepCapacity: false)
+    }
+    
+    mutating func shuffle() {
+        for i in 0 ..< (count - 1) {
+            let j = Int(arc4random_uniform(UInt32(count - i))) + i
+            swap(&self[i], &self[j])
+        }
     }
     
     func generate() -> IndexingGenerator<[Card]> {

@@ -8,19 +8,12 @@
 
 import Cocoa
 
-private func randomPokerHand() -> PokerHand {
-    var list = CardList()
-    for i in 0...4 {
-        let n = Int(arc4random_uniform(52))
-        list.append(Card(index: n))
-    }
-    return PokerHand(cardList: list)
-}
-
 class MainWindowController: NSWindowController {
     
     @IBOutlet weak var pokerHandView: PokerHandView?
     @IBOutlet weak var flipButton: NSButton?
+    
+    private var deck = Deck()
     
     private var flippingEnabled: Bool = true {
         didSet {
@@ -42,14 +35,27 @@ class MainWindowController: NSWindowController {
     }
     
     @IBAction func dealButtonPressed(sender: NSButton) {
-        flippingEnabled = true
-        pokerHandView?.hand = randomPokerHand()
+        discardCurrentHand()
+        pokerHandView?.hand = drawNewHand()
         flipButton?.enabled = true
     }
     
     @IBAction func discardButtonPressed(sender: NSButton) {
-        flippingEnabled = true
-        pokerHandView?.hand = nil
+        discardCurrentHand()
         flipButton?.enabled = false
+    }
+    
+    private func discardCurrentHand() {
+        flippingEnabled = true
+        if let hand = pokerHandView?.hand {
+            deck.discard(hand)
+            deck.replaceDiscards()
+        }
+        pokerHandView?.hand = nil
+    }
+    
+    private func drawNewHand() -> PokerHand {
+        deck.shuffle()
+        return PokerHand(cardList: deck.drawCards(5))
     }
 }
