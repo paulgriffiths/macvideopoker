@@ -13,17 +13,28 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Video Poker" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="570" height="233"/>
+            <rect key="contentRect" x="196" y="240" width="602" height="255"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="5" width="570" height="233"/>
+                <rect key="frame" x="0.0" y="5" width="602" height="255"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="csL-iY-uus" customClass="PokerHandView" customModule="VideoPoker" customModuleProvider="target">
-                        <rect key="frame" x="20" y="61" width="530" height="152"/>
-                    </customView>
+                    <box autoresizesSubviews="NO" fixedFrame="YES" title="Box" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Ovp-aL-PWa">
+                        <rect key="frame" x="17" y="57" width="568" height="178"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="566" height="176"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="csL-iY-uus" customClass="PokerHandView" customModule="VideoPoker" customModuleProvider="target">
+                                    <rect key="frame" x="18" y="14" width="530" height="152"/>
+                                </customView>
+                            </subviews>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CaZ-Rg-H0T">
                         <rect key="frame" x="14" y="13" width="151" height="32"/>
                         <buttonCell key="cell" type="push" title="Disable flipping" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ecr-1o-V7H">
@@ -39,7 +50,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="351" y="377.5"/>
+            <point key="canvasLocation" x="407" y="423.5"/>
         </window>
     </objects>
 </document>
