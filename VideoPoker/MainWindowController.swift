@@ -39,7 +39,7 @@ class MainWindowController: NSWindowController {
         }
         else {
             if let hand = pokerHandView?.hand, let array = pokerHandView?.flippedArray {
-                if array.count > 0 {
+                if !array.isEmpty {
                     hand.exchange(deck, exchangeArray: array)
                     pokerHandView?.hand = hand
                 }
