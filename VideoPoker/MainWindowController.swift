@@ -11,17 +11,24 @@ import Cocoa
 class MainWindowController: NSWindowController {
     
     @IBOutlet weak var pokerHandView: PokerHandView?
-    @IBOutlet weak var flipButton: NSButton?
+    @IBOutlet weak var dealButton: NSButton?
+    @IBOutlet weak var statusLabel: NSTextField?
     
     private var deck = Deck()
     
-    private var flippingEnabled: Bool = true {
+    private var canExchange: Bool = false {
         didSet {
-            pokerHandView?.enabled = flippingEnabled
-            flipButton?.title = flippingEnabled ? "Disable flipping" : "Enable flipping"
+            pokerHandView?.enabled = canExchange
+            dealButton?.title = canExchange ? "Exchange" : "Deal"
         }
     }
-
+    
+    private var statusMessage: String = "" {
+        didSet {
+            statusLabel?.stringValue = statusMessage
+        }
+    }
+    
     override func windowDidLoad() {
         super.windowDidLoad()
     }
@@ -30,31 +37,30 @@ class MainWindowController: NSWindowController {
         return "MainWindowController"
     }
     
-    @IBAction func enableButtonPressed(sender: NSButton) {
-        flippingEnabled = !flippingEnabled
-    }
-    
     @IBAction func dealButtonPressed(sender: NSButton) {
-        discardCurrentHand()
-        pokerHandView?.hand = drawNewHand()
-        flipButton?.enabled = true
+        if canExchange {
+            if let hand = pokerHandView?.hand, let array = pokerHandView?.flippedArray {
+                if array.count > 0 {
+                    hand.exchange(deck, exchangeArray: array)
+                    pokerHandView?.hand = hand
+                }
+                
+                let pe = PokerHandEvaluation(hand: hand)
+                statusMessage = "\(pe.handType)! Click \"Deal\" to play again"
+            }
+        }
+        else {
+            pokerHandView?.hand = discardAndDrawNewHand()
+            statusMessage = "Click on cards to flip, then click \"Exchange\" to exchange them"
+        }
+        canExchange = !canExchange
     }
     
-    @IBAction func discardButtonPressed(sender: NSButton) {
-        discardCurrentHand()
-        flipButton?.enabled = false
-    }
-    
-    private func discardCurrentHand() {
-        flippingEnabled = true
+    private func discardAndDrawNewHand() -> PokerHand {
         if let hand = pokerHandView?.hand {
             deck.discard(hand)
             deck.replaceDiscards()
         }
-        pokerHandView?.hand = nil
-    }
-    
-    private func drawNewHand() -> PokerHand {
         deck.shuffle()
         return PokerHand(cardList: deck.drawCards(5))
     }
