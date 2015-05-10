@@ -36,7 +36,6 @@ class MainWindowController: NSWindowController {
         if canExchange {
             pokerHandView?.hand = discardAndDrawNewHand()
             statusMessage = "Click on cards to flip, then click \"\(actionButtonTitle)\" to exchange them"
-            
         }
         else {
             if let hand = pokerHandView?.hand, let array = pokerHandView?.flippedArray {
@@ -44,7 +43,6 @@ class MainWindowController: NSWindowController {
                     hand.exchange(deck, exchangeArray: array)
                     pokerHandView?.hand = hand
                 }
-                
                 statusMessage = "\(PokerHandEvaluation(hand: hand).handType)! Click \"\(actionButtonTitle)\" to play again"
             }
         }

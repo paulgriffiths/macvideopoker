@@ -154,14 +154,13 @@
 		DA39A1181AFDA43A002A0118 /* VideoPoker */ = {
 			isa = PBXGroup;
 			children = (
+				DA39A18A1AFFD7FA002A0118 /* Window Controller */,
 				DA39A13B1AFDA4C8002A0118 /* Models */,
 				DA39A13A1AFDA4BB002A0118 /* Views */,
 				DA39A11B1AFDA43A002A0118 /* AppDelegate.swift */,
 				DA39A11D1AFDA43A002A0118 /* Images.xcassets */,
 				DA39A11F1AFDA43A002A0118 /* MainMenu.xib */,
 				DA39A1191AFDA43A002A0118 /* Supporting Files */,
-				DA39A1361AFDA450002A0118 /* MainWindowController.swift */,
-				DA39A1371AFDA450002A0118 /* MainWindowController.xib */,
 			);
 			path = VideoPoker;
 			sourceTree = "<group>";
@@ -234,6 +233,15 @@
 				DA39A1851AFF1551002A0118 /* Deck.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		DA39A18A1AFFD7FA002A0118 /* Window Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DA39A1361AFDA450002A0118 /* MainWindowController.swift */,
+				DA39A1371AFDA450002A0118 /* MainWindowController.xib */,
+			);
+			name = "Window Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
