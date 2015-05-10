@@ -55,6 +55,15 @@ class Hand: Printable, SequenceType {
         }
     }
     
+    func exchange(deck: Deck, exchangeArray: Array<Int>) {
+        precondition(exchangeArray.count <= deck.count, "You cannot exchange more cards than are in deck")
+        
+        for i in exchangeArray {
+            deck.discard(cardList[i])
+            cardList[i] = deck.drawCard()
+        }
+    }
+    
     func generate() -> IndexingGenerator<[Card]> {
         return cardList.generate()
     }

@@ -49,6 +49,16 @@ final class PokerHandView: NSView {
         initializeCards()
     }
     
+    var flippedArray: [Int] {
+        var array: [Int] = []
+        for (index, card) in enumerate(cards) {
+            if card.isFaceDown {
+                array.append(index)
+            }
+        }
+        return array
+    }
+    
     private func initializeCards() {
         for i in 0..<numberOfCards {
             let card = CardView(frame: makeRectForCardAtIndex(i), cardIndex: nil, imageSource: imageSource)

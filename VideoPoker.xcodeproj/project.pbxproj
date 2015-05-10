@@ -58,6 +58,7 @@
 		DA39A1841AFEE54A002A0118 /* DefaultCardImagesSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1831AFEE54A002A0118 /* DefaultCardImagesSource.swift */; };
 		DA39A1861AFF1551002A0118 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1851AFF1551002A0118 /* Deck.swift */; };
 		DA39A1871AFF1551002A0118 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1851AFF1551002A0118 /* Deck.swift */; };
+		DA39A1891AFF1E93002A0118 /* HandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1881AFF1E93002A0118 /* HandTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		DA39A1811AFEE4C6002A0118 /* CardImagesSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardImagesSource.swift; sourceTree = "<group>"; };
 		DA39A1831AFEE54A002A0118 /* DefaultCardImagesSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCardImagesSource.swift; sourceTree = "<group>"; };
 		DA39A1851AFF1551002A0118 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		DA39A1881AFF1E93002A0118 /* HandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 		DA39A1291AFDA43A002A0118 /* VideoPokerTests */ = {
 			isa = PBXGroup;
 			children = (
+				DA39A1881AFF1E93002A0118 /* HandTests.swift */,
 				DA39A17A1AFE972D002A0118 /* PokerHandEvaluationComparisonTests.swift */,
 				DA39A1751AFE84C2002A0118 /* PokerHandEvaluationHandTypeTests.swift */,
 				DA39A1671AFE6CE7002A0118 /* CardCounterTests.swift */,
@@ -365,6 +368,7 @@
 				DA39A1711AFE7E07002A0118 /* PokerHands.swift in Sources */,
 				DA39A1471AFDA71D002A0118 /* Cards.swift in Sources */,
 				DA39A1791AFE8EB1002A0118 /* PokerHandScore.swift in Sources */,
+				DA39A1891AFF1E93002A0118 /* HandTests.swift in Sources */,
 				DA39A1411AFDA513002A0118 /* Rank.swift in Sources */,
 				DA39A16E1AFE7D9F002A0118 /* PokerHand.swift in Sources */,
 				DA39A1541AFDC087002A0118 /* CardListTests.swift in Sources */,
