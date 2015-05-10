@@ -6,9 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="VideoPoker" customModuleProvider="target">
             <connections>
-                <outlet property="dealButton" destination="VZJ-G0-zMG" id="NsC-hz-dW1"/>
                 <outlet property="pokerHandView" destination="csL-iY-uus" id="XfO-m4-hWX"/>
-                <outlet property="statusLabel" destination="vgJ-TD-n6z" id="LUe-qa-cPo"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -44,6 +42,9 @@
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="statusMessage" id="MLV-tr-2sr"/>
+                        </connections>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VZJ-G0-zMG">
                         <rect key="frame" x="476" y="13" width="112" height="32"/>
@@ -52,7 +53,8 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="dealButtonPressed:" target="-2" id="1cN-pW-3nN"/>
+                            <action selector="actionButtonPressed:" target="-2" id="72o-Qv-rYA"/>
+                            <binding destination="-2" name="title" keyPath="actionButtonTitle" id="Gwv-Cm-COk"/>
                         </connections>
                     </button>
                 </subviews>
@@ -62,5 +64,6 @@
             </connections>
             <point key="canvasLocation" x="407" y="430"/>
         </window>
+        <userDefaultsController representsSharedInstance="YES" id="nS5-Pd-OYx"/>
     </objects>
 </document>

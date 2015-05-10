@@ -11,21 +11,15 @@ import Cocoa
 class MainWindowController: NSWindowController {
     
     @IBOutlet weak var pokerHandView: PokerHandView?
-    @IBOutlet weak var dealButton: NSButton?
-    @IBOutlet weak var statusLabel: NSTextField?
     
+    dynamic var actionButtonTitle: String = "Deal"
+    dynamic var statusMessage: String = "Click \"Deal\" button to begin"
     private var deck = Deck()
     
     private var canExchange: Bool = false {
         didSet {
             pokerHandView?.enabled = canExchange
-            dealButton?.title = canExchange ? "Exchange" : "Deal"
-        }
-    }
-    
-    private var statusMessage: String = "" {
-        didSet {
-            statusLabel?.stringValue = statusMessage
+            actionButtonTitle = canExchange ? "Exchange" : "Deal"
         }
     }
     
@@ -37,23 +31,23 @@ class MainWindowController: NSWindowController {
         return "MainWindowController"
     }
     
-    @IBAction func dealButtonPressed(sender: NSButton) {
+    @IBAction func actionButtonPressed(sender: NSButton) {
+        canExchange = !canExchange
         if canExchange {
+            pokerHandView?.hand = discardAndDrawNewHand()
+            statusMessage = "Click on cards to flip, then click \"\(actionButtonTitle)\" to exchange them"
+            
+        }
+        else {
             if let hand = pokerHandView?.hand, let array = pokerHandView?.flippedArray {
                 if array.count > 0 {
                     hand.exchange(deck, exchangeArray: array)
                     pokerHandView?.hand = hand
                 }
                 
-                let pe = PokerHandEvaluation(hand: hand)
-                statusMessage = "\(pe.handType)! Click \"Deal\" to play again"
+                statusMessage = "\(PokerHandEvaluation(hand: hand).handType)! Click \"\(actionButtonTitle)\" to play again"
             }
         }
-        else {
-            pokerHandView?.hand = discardAndDrawNewHand()
-            statusMessage = "Click on cards to flip, then click \"Exchange\" to exchange them"
-        }
-        canExchange = !canExchange
     }
     
     private func discardAndDrawNewHand() -> PokerHand {
