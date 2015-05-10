@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="VideoPoker" customModuleProvider="target">
             <connections>
+                <outlet property="flipButton" destination="CaZ-Rg-H0T" id="Xfl-4R-Ccf"/>
                 <outlet property="pokerHandView" destination="csL-iY-uus" id="XfO-m4-hWX"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -21,6 +22,16 @@
                 <rect key="frame" x="0.0" y="5" width="602" height="255"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CaZ-Rg-H0T">
+                        <rect key="frame" x="14" y="13" width="151" height="32"/>
+                        <buttonCell key="cell" type="push" title="Disable flipping" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ecr-1o-V7H">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="enableButtonPressed:" target="-2" id="TE9-PN-r6Z"/>
+                        </connections>
+                    </button>
                     <box autoresizesSubviews="NO" fixedFrame="YES" title="Box" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Ovp-aL-PWa">
                         <rect key="frame" x="17" y="57" width="568" height="178"/>
                         <view key="contentView">
@@ -35,14 +46,24 @@
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CaZ-Rg-H0T">
-                        <rect key="frame" x="14" y="13" width="151" height="32"/>
-                        <buttonCell key="cell" type="push" title="Disable flipping" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ecr-1o-V7H">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VZJ-G0-zMG">
+                        <rect key="frame" x="506" y="13" width="68" height="32"/>
+                        <buttonCell key="cell" type="push" title="Deal" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vay-OC-9Qj">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="enableButtonPressed:" target="-2" id="TE9-PN-r6Z"/>
+                            <action selector="dealButtonPressed:" target="-2" id="1cN-pW-3nN"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K45-bf-9wT">
+                        <rect key="frame" x="419" y="13" width="87" height="32"/>
+                        <buttonCell key="cell" type="push" title="Discard" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1h1-tK-mnS">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="discardButtonPressed:" target="-2" id="jjS-Vi-dlH"/>
                         </connections>
                     </button>
                 </subviews>

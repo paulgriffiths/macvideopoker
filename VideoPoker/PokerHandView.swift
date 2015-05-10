@@ -8,10 +8,17 @@
 
 import Cocoa
 
-class PokerHandView: NSView {
+final class PokerHandView: NSView {
     private var cards: [CardView] = []
+    private let numberOfCards = 5
     
-    var backgroundColor: NSColor = NSColor(calibratedRed: 0.4, green: 1, blue: 0.4, alpha: 1) {
+    var hand: PokerHand? {
+        didSet {
+            resetCards()
+        }
+    }
+    
+    var backgroundColor: NSColor = NSColor(calibratedRed: 0.3, green: 0.8, blue: 0.3, alpha: 1) {
         didSet {
             needsDisplay = true
         }
@@ -39,11 +46,28 @@ class PokerHandView: NSView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        for i in 0...4 {
-            let card = CardView(frame: makeRectForCardAtIndex(i), cardIndex: i, imageSource: imageSource)
+        initializeCards()
+    }
+    
+    private func initializeCards() {
+        for i in 0..<numberOfCards {
+            let card = CardView(frame: makeRectForCardAtIndex(i), cardIndex: nil, imageSource: imageSource)
             addSubview(card)
             cards.append(card)
+        }
+    }
+    
+    private func resetCards() {
+        if let hand = hand {
+            for (index, card) in enumerate(hand) {
+                cards[index].cardIndex = card.index
+                cards[index].isFaceDown = false
+            }
+        }
+        else {
+            for index in 0..<numberOfCards {
+                cards[index].cardIndex = nil
+            }
         }
     }
     

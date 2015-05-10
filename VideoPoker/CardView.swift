@@ -16,7 +16,7 @@ class CardView: NSView {
         }
     }
     
-    var cardIndex: Int {
+    var cardIndex: Int? {
         didSet {
             needsDisplay = true
         }
@@ -37,40 +37,28 @@ class CardView: NSView {
     }
     
     convenience override init(frame: CGRect) {
-        self.init(frame: frame, cardIndex: 0, imageSource: DefaultCardImagesSource())
+        self.init(frame: frame, cardIndex: nil, imageSource: DefaultCardImagesSource())
     }
     
     convenience init(frame: CGRect, imageSource: CardImagesSource) {
-        self.init(frame: frame, cardIndex: 0, imageSource: imageSource)
+        self.init(frame: frame, cardIndex: nil, imageSource: imageSource)
     }
     
-    init(frame: CGRect, cardIndex: Int, imageSource: CardImagesSource) {
+    init(frame: CGRect, cardIndex: Int?, imageSource: CardImagesSource) {
         self.cardIndex = cardIndex
         self.imageSource = imageSource
         super.init(frame: frame)
     }
     
     override func drawRect(dirtyRect: NSRect) {
-        let image: NSImage?
-        
-        if isFaceDown {
-            image = imageSource.cardBackImage
+        if let cardIndex = cardIndex {
+            let image = isFaceDown ? imageSource.cardBackImage : imageSource.cardImageForIndex(cardIndex)
+            image?.drawInRect(bounds)
         }
-        else {
-            image = imageSource.cardImageForIndex(cardIndex)
-        }
-        
-        
-        image?.drawInRect(bounds)
-    }
-    
-    private func randomizeImage() {
-        cardIndex = Int(arc4random_uniform(51))
     }
     
     override func mouseUp(theEvent: NSEvent) {
-        if enabled {
-            //randomizeImage()
+        if enabled && cardIndex != nil {
             isFaceDown = !isFaceDown
         }
     }

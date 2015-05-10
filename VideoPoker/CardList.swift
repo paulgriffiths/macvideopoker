@@ -60,6 +60,14 @@ struct CardList: SequenceType, Printable {
         return cards.count
     }
     
+    mutating func append(card: Card) {
+        cards.append(card)
+    }
+    
+    mutating func append(card: Cards) {
+        append(card.card)
+    }
+    
     subscript(index: Int) -> Card {
         get {
             return cards[index]

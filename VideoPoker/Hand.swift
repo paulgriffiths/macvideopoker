@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Paul Griffiths. All rights reserved.
 //
 
-class Hand: Printable {
+class Hand: Printable, SequenceType {
     private var cardList: CardList
     
     init(cardList: CardList) {
@@ -43,5 +43,19 @@ class Hand: Printable {
     
     var cards: CardList {
         return cardList
+    }
+    
+    subscript(index: Int) -> Card {
+        get {
+            return cardList[index]
+        }
+        
+        set {
+            cardList[index] = newValue
+        }
+    }
+    
+    func generate() -> IndexingGenerator<[Card]> {
+        return cardList.generate()
     }
 }
