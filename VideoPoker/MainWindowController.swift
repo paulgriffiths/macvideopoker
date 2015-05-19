@@ -11,12 +11,15 @@ import Cocoa
 class MainWindowController: NSWindowController {
     
     @IBOutlet weak var pokerHandView: PokerHandView?
+    @IBOutlet weak var potLabel: NSTextField?
+    @IBOutlet weak var betLabel: NSTextField?
     
     dynamic var actionButtonTitle: String = "Deal"
     dynamic var statusMessage: String = "Click \"Deal\" button to begin"
-    private var deck = Deck()
+    private let machine: SingleBettingMachine = SingleBettingMachine()
+    private let deck = Deck()
     
-    private var canExchange: Bool = false {
+    dynamic var canExchange: Bool = false {
         didSet {
             pokerHandView?.enabled = canExchange
             actionButtonTitle = canExchange ? "Exchange" : "Deal"
@@ -25,6 +28,8 @@ class MainWindowController: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
+        potLabel?.integerValue = machine.pot
+        betLabel?.integerValue = machine.currentBet
     }
     
     override var windowNibName: String? {
@@ -36,6 +41,8 @@ class MainWindowController: NSWindowController {
         if canExchange {
             pokerHandView?.hand = discardAndDrawNewHand()
             statusMessage = "Click on cards to flip, then click \"\(actionButtonTitle)\" to exchange them"
+            machine.bet(betLabel!.integerValue)
+            potLabel?.integerValue = machine.pot
         }
         else {
             if let hand = pokerHandView?.hand, let array = pokerHandView?.flippedArray {
@@ -43,7 +50,12 @@ class MainWindowController: NSWindowController {
                     hand.exchange(deck, exchangeArray: array)
                     pokerHandView?.hand = hand
                 }
-                statusMessage = "\(PokerHandEvaluation(hand: hand).handType)! Click \"\(actionButtonTitle)\" to play again"
+                let type = PokerHandEvaluation(hand: hand).handType
+                
+                let winnings = machine.win(VideoPokerHandEasyWinRatioComputer().winRatioForHand(type))
+                let winString = (winnings > 0 ? "You won $\(winnings)!" : "No win!")
+                statusMessage = "\(type)! \(winString) Click \"\(actionButtonTitle)\" to play again"
+                potLabel?.integerValue = machine.pot
             }
         }
     }

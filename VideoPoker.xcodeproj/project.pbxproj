@@ -59,6 +59,13 @@
 		DA39A1861AFF1551002A0118 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1851AFF1551002A0118 /* Deck.swift */; };
 		DA39A1871AFF1551002A0118 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1851AFF1551002A0118 /* Deck.swift */; };
 		DA39A1891AFF1E93002A0118 /* HandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A1881AFF1E93002A0118 /* HandTests.swift */; };
+		DAF3C6981B0BAFE900BA5053 /* SingleBettingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C6971B0BAFE900BA5053 /* SingleBettingMachine.swift */; };
+		DAF3C6991B0BAFE900BA5053 /* SingleBettingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C6971B0BAFE900BA5053 /* SingleBettingMachine.swift */; };
+		DAF3C69B1B0BB41100BA5053 /* SingleBettingMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C69A1B0BB41100BA5053 /* SingleBettingMachineTests.swift */; };
+		DAF3C69D1B0BB5D400BA5053 /* PokerHandWinRatioComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C69C1B0BB5D400BA5053 /* PokerHandWinRatioComputer.swift */; };
+		DAF3C69E1B0BB5D400BA5053 /* PokerHandWinRatioComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C69C1B0BB5D400BA5053 /* PokerHandWinRatioComputer.swift */; };
+		DAF3C6A01B0BB63900BA5053 /* VideoPokerHandEasyWinRatioComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C69F1B0BB63900BA5053 /* VideoPokerHandEasyWinRatioComputer.swift */; };
+		DAF3C6A11B0BB63900BA5053 /* VideoPokerHandEasyWinRatioComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3C69F1B0BB63900BA5053 /* VideoPokerHandEasyWinRatioComputer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +120,10 @@
 		DA39A1831AFEE54A002A0118 /* DefaultCardImagesSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCardImagesSource.swift; sourceTree = "<group>"; };
 		DA39A1851AFF1551002A0118 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		DA39A1881AFF1E93002A0118 /* HandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandTests.swift; sourceTree = "<group>"; };
+		DAF3C6971B0BAFE900BA5053 /* SingleBettingMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleBettingMachine.swift; sourceTree = "<group>"; };
+		DAF3C69A1B0BB41100BA5053 /* SingleBettingMachineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleBettingMachineTests.swift; sourceTree = "<group>"; };
+		DAF3C69C1B0BB5D400BA5053 /* PokerHandWinRatioComputer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokerHandWinRatioComputer.swift; sourceTree = "<group>"; };
+		DAF3C69F1B0BB63900BA5053 /* VideoPokerHandEasyWinRatioComputer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPokerHandEasyWinRatioComputer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +187,7 @@
 		DA39A1291AFDA43A002A0118 /* VideoPokerTests */ = {
 			isa = PBXGroup;
 			children = (
+				DAF3C69A1B0BB41100BA5053 /* SingleBettingMachineTests.swift */,
 				DA39A1881AFF1E93002A0118 /* HandTests.swift */,
 				DA39A17A1AFE972D002A0118 /* PokerHandEvaluationComparisonTests.swift */,
 				DA39A1751AFE84C2002A0118 /* PokerHandEvaluationHandTypeTests.swift */,
@@ -231,6 +243,9 @@
 				DA39A1721AFE8012002A0118 /* PokerHandEvaluation.swift */,
 				DA39A1771AFE8EB1002A0118 /* PokerHandScore.swift */,
 				DA39A1851AFF1551002A0118 /* Deck.swift */,
+				DAF3C6971B0BAFE900BA5053 /* SingleBettingMachine.swift */,
+				DAF3C69C1B0BB5D400BA5053 /* PokerHandWinRatioComputer.swift */,
+				DAF3C69F1B0BB63900BA5053 /* VideoPokerHandEasyWinRatioComputer.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -350,6 +365,7 @@
 				DA39A13D1AFDA4DA002A0118 /* Suit.swift in Sources */,
 				DA39A1651AFE6B39002A0118 /* CardCounter.swift in Sources */,
 				DA39A1401AFDA513002A0118 /* Rank.swift in Sources */,
+				DAF3C6A01B0BB63900BA5053 /* VideoPokerHandEasyWinRatioComputer.swift in Sources */,
 				DA39A1431AFDA5AA002A0118 /* Card.swift in Sources */,
 				DA39A15B1AFE4055002A0118 /* SuitCounter.swift in Sources */,
 				DA39A1701AFE7E07002A0118 /* PokerHands.swift in Sources */,
@@ -363,6 +379,8 @@
 				DA39A1731AFE8012002A0118 /* PokerHandEvaluation.swift in Sources */,
 				DA39A16D1AFE7D9F002A0118 /* PokerHand.swift in Sources */,
 				DA39A17D1AFEABE9002A0118 /* CardView.swift in Sources */,
+				DAF3C6981B0BAFE900BA5053 /* SingleBettingMachine.swift in Sources */,
+				DAF3C69D1B0BB5D400BA5053 /* PokerHandWinRatioComputer.swift in Sources */,
 				DA39A1841AFEE54A002A0118 /* DefaultCardImagesSource.swift in Sources */,
 				DA39A1601AFE42BB002A0118 /* RankComboCounter.swift in Sources */,
 			);
@@ -386,6 +404,7 @@
 				DA39A14B1AFDABBC002A0118 /* CardsTests.swift in Sources */,
 				DA39A13E1AFDA4DA002A0118 /* Suit.swift in Sources */,
 				DA39A1661AFE6B39002A0118 /* CardCounter.swift in Sources */,
+				DAF3C6A11B0BB63900BA5053 /* VideoPokerHandEasyWinRatioComputer.swift in Sources */,
 				DA39A15E1AFE4100002A0118 /* SuitCounterTests.swift in Sources */,
 				DA39A1591AFE3CE4002A0118 /* RankCounterTests.swift in Sources */,
 				DA39A1681AFE6CE7002A0118 /* CardCounterTests.swift in Sources */,
@@ -393,12 +412,15 @@
 				DA39A15C1AFE4055002A0118 /* SuitCounter.swift in Sources */,
 				DA39A1871AFF1551002A0118 /* Deck.swift in Sources */,
 				DA39A14F1AFDB369002A0118 /* CardTests.swift in Sources */,
+				DAF3C69B1B0BB41100BA5053 /* SingleBettingMachineTests.swift in Sources */,
 				DA39A17B1AFE972D002A0118 /* PokerHandEvaluationComparisonTests.swift in Sources */,
 				DA39A1521AFDBEA7002A0118 /* CardList.swift in Sources */,
 				DA39A1741AFE8012002A0118 /* PokerHandEvaluation.swift in Sources */,
 				DA39A16B1AFE79B3002A0118 /* Hand.swift in Sources */,
+				DAF3C6991B0BAFE900BA5053 /* SingleBettingMachine.swift in Sources */,
 				DA39A1611AFE42BB002A0118 /* RankComboCounter.swift in Sources */,
 				DA39A1441AFDA5AA002A0118 /* Card.swift in Sources */,
+				DAF3C69E1B0BB5D400BA5053 /* PokerHandWinRatioComputer.swift in Sources */,
 				DA39A1491AFDA9C8002A0118 /* RankTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,6 +604,7 @@
 				DA39A1321AFDA43A002A0118 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA39A1331AFDA43A002A0118 /* Build configuration list for PBXNativeTarget "VideoPokerTests" */ = {
 			isa = XCConfigurationList;
@@ -590,6 +613,7 @@
 				DA39A1351AFDA43A002A0118 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
