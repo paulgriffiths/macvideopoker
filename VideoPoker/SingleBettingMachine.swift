@@ -37,6 +37,10 @@ class SingleBettingMachine {
         self.betState = .ReadyForBet
     }
     
+    func validateBet(amount: Int) -> Bool {
+        return amount > 0 && amount <= pot 
+    }
+    
     func bet(amount: Int) {
         precondition(betState == .ReadyForBet, "Betting machine is not ready for bet")
         precondition(amount <= pot, "You cannot bet more than there is in the pot")
@@ -54,6 +58,9 @@ class SingleBettingMachine {
         let amountWon = currentBet * winRatio
         pot += amountWon
         betState = (pot == 0 ? .OutOfMoney : .ReadyForBet)
+        if currentBet > pot {
+            currentBet = pot
+        }
         return amountWon
     }
 

@@ -56,6 +56,7 @@ class MainWindowController: NSWindowController {
                 let winString = (winnings > 0 ? "You won $\(winnings)!" : "No win!")
                 statusMessage = "\(type)! \(winString) Click \"\(actionButtonTitle)\" to play again"
                 potLabel?.integerValue = machine.pot
+                betLabel?.integerValue = machine.currentBet
             }
         }
     }
