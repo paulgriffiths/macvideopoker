@@ -16,8 +16,10 @@ class MainWindowController: NSWindowController {
     
     dynamic var actionButtonTitle: String = "Deal"
     dynamic var statusMessage: String = "Click \"Deal\" button to begin"
+    
     private let machine: SingleBettingMachine = SingleBettingMachine()
     private let deck = Deck()
+    private var winComputer = VideoPokerHandEasyWinRatioComputer()
     
     dynamic var canExchange: Bool = false {
         didSet {
@@ -50,11 +52,11 @@ class MainWindowController: NSWindowController {
                     hand.exchange(deck, exchangeArray: array)
                     pokerHandView?.hand = hand
                 }
-                let type = PokerHandEvaluation(hand: hand).handType
                 
-                let winnings = machine.win(VideoPokerHandEasyWinRatioComputer().winRatioForHand(type))
+                let win = winComputer.winRatioForHand(hand)
+                let winnings = machine.win(win.winRatio)
                 let winString = (winnings > 0 ? "You won $\(winnings)!" : "No win!")
-                statusMessage = "\(type)! \(winString) Click \"\(actionButtonTitle)\" to play again"
+                statusMessage = "\(win.description)! \(winString) Click \"\(actionButtonTitle)\" to play again"
                 potLabel?.integerValue = machine.pot
                 betLabel?.integerValue = machine.currentBet
             }

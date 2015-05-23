@@ -1,43 +1,43 @@
 //
-//  VideoPokerHandEasyWinRatioComputer.swift
+//  VideoPokerHandNormalWinRatioComputer.swift
 //  VideoPoker
 //
-//  Created by Paul Griffiths on 5/19/15.
+//  Created by Paul Griffiths on 5/23/15.
 //  Copyright (c) 2015 Paul Griffiths. All rights reserved.
 //
 
-final class VideoPokerHandEasyWinRatioComputer: PokerHandWinRatioComputer {
+final class VideoPokerHandNormalWinRatioComputer: PokerHandWinRatioComputer {
     override func winRatioForHand(hand: PokerHand) -> (winRatio: Int, description: String) {
         let pe = PokerHandEvaluation(hand: hand)
         
         switch pe.handType {
         case .RoyalFlush:
-            return (2500, "Royal flush")
+            return (800, "Royal flush")
             
         case .StraightFlush:
-            return (250, "Straight flush")
+            return (50, "Straight flush")
             
         case .Four:
-            return (100, "Four of a kind")
+            return (25, "Four of a kind")
             
         case .FullHouse:
-            return (50 ,"Full house")
+            return (9 ,"Full house")
             
         case .Flush:
-            return (20, "Flush")
+            return (6, "Flush")
             
         case .Straight:
-            return (15, "Straight")
+            return (4, "Straight")
             
         case .Three:
-            return (4, "Three of a kind")
+            return (3, "Three of a kind")
             
         case .TwoPair:
-            return (3, "Two pair")
+            return (2, "Two pair")
             
         case .Pair:
             if pe.topLevelRankScore >= .Jack {
-                return (2, "Jacks or better")
+                return (1, "Jacks or better")
             }
             else {
                 return (0, "Pair")

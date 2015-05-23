@@ -7,7 +7,7 @@
 //
 
 class PokerHandWinRatioComputer {
-    func winRatioForHand(hand: PokerHands) -> Int {
+    func winRatioForHand(hand: PokerHand) -> (winRatio: Int, description: String) {
         fatalError("Do not directly instantiate this class")
     }
 }

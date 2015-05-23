@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA2FB78A1B11235800053B9E /* VideoPokerHandNormalWinRatioComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FB7891B11235800053B9E /* VideoPokerHandNormalWinRatioComputer.swift */; };
+		DA2FB78B1B11235800053B9E /* VideoPokerHandNormalWinRatioComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FB7891B11235800053B9E /* VideoPokerHandNormalWinRatioComputer.swift */; };
 		DA39A11C1AFDA43A002A0118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A11B1AFDA43A002A0118 /* AppDelegate.swift */; };
 		DA39A11E1AFDA43A002A0118 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA39A11D1AFDA43A002A0118 /* Images.xcassets */; };
 		DA39A1211AFDA43A002A0118 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA39A11F1AFDA43A002A0118 /* MainMenu.xib */; };
@@ -79,6 +81,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA2FB7891B11235800053B9E /* VideoPokerHandNormalWinRatioComputer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPokerHandNormalWinRatioComputer.swift; sourceTree = "<group>"; };
 		DA39A1161AFDA43A002A0118 /* VideoPoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoPoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA39A11A1AFDA43A002A0118 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA39A11B1AFDA43A002A0118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -246,6 +249,7 @@
 				DAF3C6971B0BAFE900BA5053 /* SingleBettingMachine.swift */,
 				DAF3C69C1B0BB5D400BA5053 /* PokerHandWinRatioComputer.swift */,
 				DAF3C69F1B0BB63900BA5053 /* VideoPokerHandEasyWinRatioComputer.swift */,
+				DA2FB7891B11235800053B9E /* VideoPokerHandNormalWinRatioComputer.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -372,6 +376,7 @@
 				DA39A1821AFEE4C6002A0118 /* CardImagesSource.swift in Sources */,
 				DA39A1781AFE8EB1002A0118 /* PokerHandScore.swift in Sources */,
 				DA39A1461AFDA71D002A0118 /* Cards.swift in Sources */,
+				DA2FB78A1B11235800053B9E /* VideoPokerHandNormalWinRatioComputer.swift in Sources */,
 				DA39A1381AFDA450002A0118 /* MainWindowController.swift in Sources */,
 				DA39A16A1AFE79B3002A0118 /* Hand.swift in Sources */,
 				DA39A11C1AFDA43A002A0118 /* AppDelegate.swift in Sources */,
@@ -401,6 +406,7 @@
 				DA39A1631AFE4D6F002A0118 /* RankComboCounterTests.swift in Sources */,
 				DA39A14D1AFDB20B002A0118 /* SuitTests.swift in Sources */,
 				DA39A1571AFE3787002A0118 /* RankCounter.swift in Sources */,
+				DA2FB78B1B11235800053B9E /* VideoPokerHandNormalWinRatioComputer.swift in Sources */,
 				DA39A14B1AFDABBC002A0118 /* CardsTests.swift in Sources */,
 				DA39A13E1AFDA4DA002A0118 /* Suit.swift in Sources */,
 				DA39A1661AFE6B39002A0118 /* CardCounter.swift in Sources */,
