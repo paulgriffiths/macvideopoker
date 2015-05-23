@@ -10,6 +10,8 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    @IBOutlet weak var easyMenu: NSMenuItem?
+    @IBOutlet weak var normalMenu: NSMenuItem?
 
     var mainWindowController: MainWindowController?
 
@@ -29,6 +31,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
+    @IBAction func easyMenuSelected(sender: NSMenuItem) {
+        self.mainWindowController?.easyDifficulty = true
+        sender.state = NSOnState
+        normalMenu?.state = NSOffState
+    }
+    
+    @IBAction func normalMenuSelected(sender: NSMenuItem) {
+        self.mainWindowController?.easyDifficulty = false
+        sender.state = NSOnState
+        easyMenu?.state = NSOffState
+    }
 
 }
 

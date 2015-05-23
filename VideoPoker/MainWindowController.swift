@@ -13,13 +13,29 @@ class MainWindowController: NSWindowController {
     @IBOutlet weak var pokerHandView: PokerHandView?
     @IBOutlet weak var potLabel: NSTextField?
     @IBOutlet weak var betLabel: NSTextField?
+    @IBOutlet weak var royalFlushPayoutLabel: NSTextField?
+    @IBOutlet weak var straightFlushPayoutLabel: NSTextField?
+    @IBOutlet weak var fourPayoutLabel: NSTextField?
+    @IBOutlet weak var fullHousePayoutLabel: NSTextField?
+    @IBOutlet weak var flushPayoutLabel: NSTextField?
+    @IBOutlet weak var straightPayoutLabel: NSTextField?
+    @IBOutlet weak var threePayoutLabel: NSTextField?
+    @IBOutlet weak var twoPairPayoutLabel: NSTextField?
+    @IBOutlet weak var jacksPayoutLabel: NSTextField?
+    
+    private let machine: SingleBettingMachine = SingleBettingMachine()
+    private let deck = Deck()
+    private var winComputer: PokerHandWinRatioComputer = VideoPokerHandEasyWinRatioComputer()
     
     dynamic var actionButtonTitle: String = "Deal"
     dynamic var statusMessage: String = "Click \"Deal\" button to begin"
     
-    private let machine: SingleBettingMachine = SingleBettingMachine()
-    private let deck = Deck()
-    private var winComputer = VideoPokerHandEasyWinRatioComputer()
+    var easyDifficulty: Bool = true {
+        didSet {
+            winComputer = easyDifficulty ? VideoPokerHandEasyWinRatioComputer() : VideoPokerHandNormalWinRatioComputer()
+            setPayoutLabels()
+        }
+    }
     
     dynamic var canExchange: Bool = false {
         didSet {
@@ -32,6 +48,7 @@ class MainWindowController: NSWindowController {
         super.windowDidLoad()
         potLabel?.integerValue = machine.pot
         betLabel?.integerValue = machine.currentBet
+        setPayoutLabels()
     }
     
     override var windowNibName: String? {
@@ -70,5 +87,17 @@ class MainWindowController: NSWindowController {
         }
         deck.shuffle()
         return PokerHand(cardList: deck.drawCards(5))
+    }
+    
+    private func setPayoutLabels() {
+        royalFlushPayoutLabel?.integerValue = winComputer.winRatioForHand(PokerHand(cards: Cards.AceClubs, Cards.KingClubs, Cards.QueenClubs, Cards.JackClubs, Cards.TenClubs)).winRatio
+        straightFlushPayoutLabel?.integerValue = winComputer.winRatioForHand(PokerHand(cards: Cards.NineClubs, Cards.KingClubs, Cards.QueenClubs, Cards.JackClubs, Cards.TenClubs)).winRatio
+        fourPayoutLabel?.integerValue = winComputer.winRatioForHand(PokerHand(cards: Cards.AceClubs, Cards.AceHearts, Cards.AceSpades, Cards.AceDiamonds, Cards.KingClubs)).winRatio
+        fullHousePayoutLabel?.integerValue = winComputer.winRatioForHand(PokerHand(cards: Cards.AceClubs, Cards.AceHearts, Cards.AceSpades, Cards.KingDiamonds, Cards.KingClubs)).winRatio
+        flushPayoutLabel?.integerValue = winComputer.winRatioForHand(PokerHand(cards: Cards.AceClubs, Cards.QueenClubs, Cards.TenClubs, Cards.EightClubs, Cards.SixClubs)).winRatio
+        straightPayoutLabel?.integerValue = winComputer.winRatioForHand(PokerHand(cards: Cards.NineClubs, Cards.KingHearts, Cards.QueenSpades, Cards.JackDiamonds, Cards.TenClubs)).winRatio
+        threePayoutLabel?.integerValue = winComputer.winRatioForHand(PokerHand(cards: Cards.AceClubs, Cards.AceHearts, Cards.AceSpades, Cards.QueenDiamonds, Cards.KingClubs)).winRatio
+        twoPairPayoutLabel?.integerValue = winComputer.winRatioForHand(PokerHand(cards: Cards.AceClubs, Cards.AceHearts, Cards.QueenSpades, Cards.QueenDiamonds, Cards.KingClubs)).winRatio
+        jacksPayoutLabel?.integerValue = winComputer.winRatioForHand(PokerHand(cards: Cards.AceClubs, Cards.AceHearts, Cards.JackSpades, Cards.QueenDiamonds, Cards.KingClubs)).winRatio
     }
 }
