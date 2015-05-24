@@ -100,16 +100,20 @@ class MainWindowController: NSWindowController {
     }
     
     private func validateBet() -> Bool {
-        let bet = betLabel!.integerValue
-        if bet > machine.pot {
-            badBetAlert("You cannot bet more than the pot")
+        if let betLabel = betLabel {
+            if betLabel.integerValue > machine.pot {
+                badBetAlert("You cannot bet more than the pot")
+                return false
+            }
+            else if betLabel.integerValue < 1 {
+                badBetAlert("You must bet a positive amount")
+                return false
+            }
+            return true
+        }
+        else {
             return false
         }
-        else if bet < 1 {
-            badBetAlert("You must bet a positive amount")
-            return false
-        }
-        return true
     }
     
     private func badBetAlert(message: String) {
