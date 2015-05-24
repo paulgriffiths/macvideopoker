@@ -95,6 +95,7 @@ class MainWindowController: NSWindowController {
                 if machine.isOutOfMoney {
                     nextString = "Game over!"
                     actionButton?.enabled = false
+                    betLabel?.editable = false
                 }
                 else {
                     nextString = "Click \"\(actionButtonTitle)\" to play again."
@@ -114,6 +115,7 @@ class MainWindowController: NSWindowController {
         statusMessage = initialStatusMessage
         canExchange = initialCanExchangeValue
         actionButton?.enabled = true
+        betLabel?.editable = true
         machine = SingleBettingMachine()
         updatePotAndBetFields()
     }
