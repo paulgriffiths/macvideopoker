@@ -32,6 +32,7 @@ class MainWindowController: NSWindowController {
     private let deck = Deck()
     private var winComputer: PokerHandWinRatioComputer = VideoPokerHandEasyWinRatioComputer()
     private let winFormatter = NSNumberFormatter()
+    private let preferenceManager = PreferenceManager()
     
     dynamic var actionButtonTitle: String = initialButtonTitle
     dynamic var statusMessage: String = initialStatusMessage
@@ -53,6 +54,12 @@ class MainWindowController: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
+        
+        if preferenceManager.pot == 0 {
+            preferenceManager.resetBetAndPot()
+        }
+        
+        machine = SingleBettingMachine(pot: preferenceManager.pot, defaultBet: preferenceManager.bet)
         
         if let formatter = potLabel?.formatter as? NSNumberFormatter {
             formatter.maximumFractionDigits = 0
@@ -123,7 +130,8 @@ class MainWindowController: NSWindowController {
         canExchange = initialCanExchangeValue
         actionButton?.enabled = true
         betLabel?.editable = true
-        machine = SingleBettingMachine()
+        preferenceManager.resetBetAndPot()
+        machine = SingleBettingMachine(pot: preferenceManager.pot, defaultBet: preferenceManager.bet)
         updatePotAndBetFields()
     }
     
@@ -139,7 +147,9 @@ class MainWindowController: NSWindowController {
                 self.window?.makeFirstResponder(betLabel)
                 return false
             }
-            return true
+            else {
+                return true
+            }
         }
         else {
             return false
@@ -162,6 +172,8 @@ class MainWindowController: NSWindowController {
     private func updatePotAndBetFields() {
         potLabel?.integerValue = machine.pot
         betLabel?.integerValue = machine.currentBet
+        preferenceManager.pot = machine.pot
+        preferenceManager.bet = min(machine.pot, machine.currentBet)
     }
     
     private func discardAndDrawNewHand() -> PokerHand {
