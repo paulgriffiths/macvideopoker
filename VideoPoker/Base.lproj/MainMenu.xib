@@ -13,8 +13,9 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="VideoPoker" customModuleProvider="target">
             <connections>
-                <outlet property="easyMenu" destination="86w-7o-oqb" id="d0m-wX-zaD"/>
-                <outlet property="normalMenu" destination="QuQ-UA-93y" id="hTB-DQ-5TJ"/>
+                <outlet property="difficultyMenu" destination="9iJ-Ps-SKr" id="WNF-7m-ORV"/>
+                <outlet property="easyMenu" destination="Aki-h6-axo" id="vy1-MO-BhY"/>
+                <outlet property="normalMenu" destination="3c9-V5-Z5N" id="Db6-hR-7w1"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -64,21 +65,32 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Difficulty" id="aUF-d1-5bR">
+                <menuItem title="Game" id="aUF-d1-5bR">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Difficulty" id="F6h-Lj-8gh">
+                    <menu key="submenu" title="Game" id="F6h-Lj-8gh">
                         <items>
-                            <menuItem title="Easy" state="on" id="86w-7o-oqb">
-                                <modifierMask key="keyEquivalentModifierMask"/>
+                            <menuItem title="New game" keyEquivalent="g" id="EUV-k3-TKd">
                                 <connections>
-                                    <action selector="easyMenuSelected:" target="Voe-Tx-rLC" id="eTh-zj-a06"/>
+                                    <action selector="newGameSelected:" target="Voe-Tx-rLC" id="ta0-dv-99v"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Normal" id="QuQ-UA-93y">
+                            <menuItem isSeparatorItem="YES" id="h6S-tH-E9Z"/>
+                            <menuItem title="Difficulty" id="9iJ-Ps-SKr">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="normalMenuSelected:" target="Voe-Tx-rLC" id="RIG-bo-aU6"/>
-                                </connections>
+                                <menu key="submenu" title="Difficulty" id="107-Qb-Asy">
+                                    <items>
+                                        <menuItem title="Easy" state="on" keyEquivalent="e" id="Aki-h6-axo">
+                                            <connections>
+                                                <action selector="easyMenuSelected:" target="Voe-Tx-rLC" id="fhI-cM-OKe"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Normal" keyEquivalent="n" id="3c9-V5-Z5N">
+                                            <connections>
+                                                <action selector="normalMenuSelected:" target="Voe-Tx-rLC" id="deE-p4-v0Y"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
                             </menuItem>
                         </items>
                     </menu>
@@ -97,5 +109,6 @@
                 </menuItem>
             </items>
         </menu>
+        <userDefaultsController representsSharedInstance="YES" id="KCJ-sE-edZ"/>
     </objects>
 </document>

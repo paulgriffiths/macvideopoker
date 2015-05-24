@@ -10,6 +10,7 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    @IBOutlet weak var difficultyMenu: NSMenuItem?
     @IBOutlet weak var easyMenu: NSMenuItem?
     @IBOutlet weak var normalMenu: NSMenuItem?
 
@@ -43,5 +44,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         easyMenu?.state = NSOffState
     }
 
+    @IBAction func newGameSelected(sender: NSMenuItem) {
+        self.mainWindowController?.resetGame()
+    }
 }
 
