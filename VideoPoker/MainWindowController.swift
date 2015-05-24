@@ -9,7 +9,7 @@
 import Cocoa
 
 private let initialButtonTitle = "Deal"
-private let initialStatusMessage = "Click \"Deal\" button to begin"
+private let initialStatusMessage = "Click \"Deal\" button to begin."
 private let initialCanExchangeValue = false
 
 class MainWindowController: NSWindowController {
@@ -31,6 +31,7 @@ class MainWindowController: NSWindowController {
     private var machine: SingleBettingMachine = SingleBettingMachine()
     private let deck = Deck()
     private var winComputer: PokerHandWinRatioComputer = VideoPokerHandEasyWinRatioComputer()
+    private let winFormatter = NSNumberFormatter()
     
     dynamic var actionButtonTitle: String = initialButtonTitle
     dynamic var statusMessage: String = initialStatusMessage
@@ -52,12 +53,17 @@ class MainWindowController: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
+        
         if let formatter = potLabel?.formatter as? NSNumberFormatter {
             formatter.maximumFractionDigits = 0
         }
         if let formatter = betLabel?.formatter as? NSNumberFormatter {
             formatter.maximumFractionDigits = 0
         }
+        
+        winFormatter.numberStyle = .CurrencyStyle
+        winFormatter.maximumFractionDigits = 0
+        
         updatePotAndBetFields()
         setPayoutLabels()
     }
@@ -77,7 +83,7 @@ class MainWindowController: NSWindowController {
         
         if canExchange {
             pokerHandView?.hand = discardAndDrawNewHand()
-            statusMessage = "Click on cards to flip, then click \"\(actionButtonTitle)\" to exchange them"
+            statusMessage = "Click on cards to flip, then click \"\(actionButtonTitle)\" to exchange them."
             machine.bet(betLabel!.integerValue)
         }
         else {
@@ -89,7 +95,8 @@ class MainWindowController: NSWindowController {
                 
                 let win = winComputer.winRatioForHand(hand)
                 let winnings = machine.win(win.winRatio)
-                let winString = (winnings > 0 ? "You won $\(winnings)!" : "No win!")
+                let winAmount: String = winFormatter.stringFromNumber(winnings)!
+                let winString = (winnings > 0 ? "You won \(winAmount)!" : "No win!")
                 
                 let nextString: String
                 if machine.isOutOfMoney {
@@ -141,7 +148,7 @@ class MainWindowController: NSWindowController {
     
     private func badBetAlert(message: String) {
         let alert = NSAlert()
-        alert.messageText = "Invalid bet."
+        alert.messageText = "Invalid bet"
         alert.informativeText = message
         alert.runModal()
         updatePotAndBetFields()
