@@ -1,9 +1,12 @@
 //
 //  SuitCounter.swift
-//  VideoPoker
 //
-//  Created by Paul Griffiths on 5/9/15.
-//  Copyright (c) 2015 Paul Griffiths. All rights reserved.
+//  Utility struct to calculate the numbers of distinct suits
+//  in a list of playing cards, for instance to determine how
+//  many clubs or hearts are present in the list.
+//
+//  Copyright (c) 2015 Paul Griffiths.
+//  Distributed under the terms of the GNU General Public License. <http://www.gnu.org/licenses/>
 //
 
 struct SuitCounter {

@@ -1,9 +1,10 @@
 //
-//  Suits.swift
-//  VideoPoker
+//  Suit.swift
 //
-//  Created by Paul Griffiths on 5/8/15.
-//  Copyright (c) 2015 Paul Griffiths. All rights reserved.
+//  Enumeration of playing card suits.
+//
+//  Copyright (c) 2015 Paul Griffiths.
+//  Distributed under the terms of the GNU General Public License. <http://www.gnu.org/licenses/>
 //
 
 public func ==(first: Suit, second: Suit) -> Bool {

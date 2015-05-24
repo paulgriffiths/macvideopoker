@@ -1,9 +1,10 @@
 //
 //  PokerHandView.swift
-//  VideoPoker
 //
-//  Created by Paul Griffiths on 5/9/15.
-//  Copyright (c) 2015 Paul Griffiths. All rights reserved.
+//  Poker hand view class.
+//
+//  Copyright (c) 2015 Paul Griffiths.
+//  Distributed under the terms of the GNU General Public License. <http://www.gnu.org/licenses/>
 //
 
 import Cocoa

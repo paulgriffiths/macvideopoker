@@ -1,9 +1,14 @@
 //
 //  RankComboCounter.swift
-//  VideoPoker
 //
-//  Created by Paul Griffiths on 5/9/15.
-//  Copyright (c) 2015 Paul Griffiths. All rights reserved.
+//  Utility struct to calculate the numbers of quantities of ranks
+//  in a list of playing cards, and associated information, for
+//  instance to determine how many pairs or threes-of-a-kind are
+//  present in the list, or to determine the rank of the highest
+//  single card, or of the highest pair.
+//
+//  Copyright (c) 2015 Paul Griffiths.
+//  Distributed under the terms of the GNU General Public License. <http://www.gnu.org/licenses/>
 //
 
 struct RankComboCounter {

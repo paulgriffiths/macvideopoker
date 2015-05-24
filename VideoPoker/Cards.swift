@@ -2,8 +2,12 @@
 //  Cards.swift
 //  VideoPoker
 //
-//  Created by Paul Griffiths on 5/8/15.
-//  Copyright (c) 2015 Paul Griffiths. All rights reserved.
+//  Cards.swift
+//
+//  Enumeration for all 52 regular playing cards.
+//
+//  Copyright (c) 2015 Paul Griffiths.
+//  Distributed under the terms of the GNU General Public License. <http://www.gnu.org/licenses/>
 //
 
 public enum Cards: Int {

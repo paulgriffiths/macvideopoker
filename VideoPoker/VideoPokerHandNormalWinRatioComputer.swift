@@ -1,9 +1,10 @@
 //
 //  VideoPokerHandNormalWinRatioComputer.swift
-//  VideoPoker
 //
-//  Created by Paul Griffiths on 5/23/15.
-//  Copyright (c) 2015 Paul Griffiths. All rights reserved.
+//  Class for calculating the normal win ratio of a specified video poker hand.
+//
+//  Copyright (c) 2015 Paul Griffiths.
+//  Distributed under the terms of the GNU General Public License. <http://www.gnu.org/licenses/>
 //
 
 final class VideoPokerHandNormalWinRatioComputer: PokerHandWinRatioComputer {

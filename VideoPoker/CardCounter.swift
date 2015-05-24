@@ -1,9 +1,13 @@
 //
 //  CardCounter.swift
-//  VideoPoker
 //
-//  Created by Paul Griffiths on 5/9/15.
-//  Copyright (c) 2015 Paul Griffiths. All rights reserved.
+//  Utility struct to calculate information about the cards in
+//  a list of playing cards, for instance which ranks and suits
+//  are present, or the rank of the highest pair, or whether
+//  the cards constitute a straight.
+//
+//  Copyright (c) 2015 Paul Griffiths.
+//  Distributed under the terms of the GNU General Public License. <http://www.gnu.org/licenses/>
 //
 
 struct CardCounter {
