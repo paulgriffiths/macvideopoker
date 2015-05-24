@@ -124,10 +124,12 @@ class MainWindowController: NSWindowController {
         if let betLabel = betLabel {
             if betLabel.integerValue > machine.pot {
                 badBetAlert("You cannot bet more than the pot")
+                self.window?.makeFirstResponder(betLabel)
                 return false
             }
             else if betLabel.integerValue < 1 {
                 badBetAlert("You must bet a positive amount")
+                self.window?.makeFirstResponder(betLabel)
                 return false
             }
             return true
