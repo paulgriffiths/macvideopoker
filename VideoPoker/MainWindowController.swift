@@ -51,6 +51,12 @@ class MainWindowController: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
+        if let formatter = potLabel?.formatter as? NSNumberFormatter {
+            formatter.maximumFractionDigits = 0
+        }
+        if let formatter = betLabel?.formatter as? NSNumberFormatter {
+            formatter.maximumFractionDigits = 0
+        }
         updatePotAndBetFields()
         setPayoutLabels()
     }
