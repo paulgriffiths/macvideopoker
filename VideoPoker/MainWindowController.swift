@@ -15,6 +15,7 @@ private let initialCanExchangeValue = false
 class MainWindowController: NSWindowController {
     
     @IBOutlet weak var pokerHandView: PokerHandView?
+    @IBOutlet weak var actionButton: NSButton?
     @IBOutlet weak var potLabel: NSTextField?
     @IBOutlet weak var betLabel: NSTextField?
     @IBOutlet weak var royalFlushPayoutLabel: NSTextField?
@@ -89,7 +90,18 @@ class MainWindowController: NSWindowController {
                 let win = winComputer.winRatioForHand(hand)
                 let winnings = machine.win(win.winRatio)
                 let winString = (winnings > 0 ? "You won $\(winnings)!" : "No win!")
-                statusMessage = "\(win.description)! \(winString) Click \"\(actionButtonTitle)\" to play again"            }
+                
+                let nextString: String
+                if machine.isOutOfMoney {
+                    nextString = "Game over!"
+                    actionButton?.enabled = false
+                }
+                else {
+                    nextString = "Click \"\(actionButtonTitle)\" to play again."
+                }
+                
+                statusMessage = "\(win.description)! \(winString) \(nextString)"
+            }
         }
         
         updatePotAndBetFields()
@@ -101,6 +113,7 @@ class MainWindowController: NSWindowController {
         actionButtonTitle = initialButtonTitle
         statusMessage = initialStatusMessage
         canExchange = initialCanExchangeValue
+        actionButton?.enabled = true
         machine = SingleBettingMachine()
         updatePotAndBetFields()
     }

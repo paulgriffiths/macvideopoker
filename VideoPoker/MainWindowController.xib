@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="VideoPoker" customModuleProvider="target">
             <connections>
+                <outlet property="actionButton" destination="VZJ-G0-zMG" id="Bnr-fL-kSH"/>
                 <outlet property="betLabel" destination="b8a-pw-M0A" id="wKa-xw-hnl"/>
                 <outlet property="flushPayoutLabel" destination="Efe-l0-szf" id="mIz-gs-ePt"/>
                 <outlet property="fourPayoutLabel" destination="cPz-qH-crC" id="q6q-RV-noV"/>
