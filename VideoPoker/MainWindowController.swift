@@ -80,12 +80,6 @@ class MainWindowController: NSWindowController {
     }
     
     @IBAction func actionButtonPressed(sender: NSButton) {
-        if !canExchange {
-            if !validateBet() {
-                return
-            }
-        }
-        
         canExchange = !canExchange
         
         if canExchange {
@@ -135,24 +129,16 @@ class MainWindowController: NSWindowController {
         updatePotAndBetFields()
     }
     
-    private func validateBet() -> Bool {
+    @IBAction func betFieldChanged(sender: NSTextField) {
         if let betLabel = betLabel {
             if betLabel.integerValue > machine.pot {
                 badBetAlert("You cannot bet more than the pot")
                 self.window?.makeFirstResponder(betLabel)
-                return false
             }
             else if betLabel.integerValue < 1 {
                 badBetAlert("You must bet a positive amount")
                 self.window?.makeFirstResponder(betLabel)
-                return false
             }
-            else {
-                return true
-            }
-        }
-        else {
-            return false
         }
     }
     
@@ -160,6 +146,7 @@ class MainWindowController: NSWindowController {
         let alert = NSAlert()
         alert.messageText = "Invalid bet"
         alert.informativeText = message
+        alert.alertStyle = .InformationalAlertStyle
         alert.runModal()
         updatePotAndBetFields()
     }
