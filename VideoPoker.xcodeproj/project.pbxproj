@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		DA2FB78A1B11235800053B9E /* VideoPokerHandNormalWinRatioComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FB7891B11235800053B9E /* VideoPokerHandNormalWinRatioComputer.swift */; };
 		DA2FB78B1B11235800053B9E /* VideoPokerHandNormalWinRatioComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FB7891B11235800053B9E /* VideoPokerHandNormalWinRatioComputer.swift */; };
+		DA2FB78D1B12459200053B9E /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FB78C1B12459200053B9E /* PreferenceManager.swift */; };
+		DA2FB78E1B12459200053B9E /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FB78C1B12459200053B9E /* PreferenceManager.swift */; };
 		DA39A11C1AFDA43A002A0118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA39A11B1AFDA43A002A0118 /* AppDelegate.swift */; };
 		DA39A11E1AFDA43A002A0118 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA39A11D1AFDA43A002A0118 /* Images.xcassets */; };
 		DA39A1211AFDA43A002A0118 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA39A11F1AFDA43A002A0118 /* MainMenu.xib */; };
@@ -82,6 +84,7 @@
 
 /* Begin PBXFileReference section */
 		DA2FB7891B11235800053B9E /* VideoPokerHandNormalWinRatioComputer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPokerHandNormalWinRatioComputer.swift; sourceTree = "<group>"; };
+		DA2FB78C1B12459200053B9E /* PreferenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
 		DA39A1161AFDA43A002A0118 /* VideoPoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoPoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA39A11A1AFDA43A002A0118 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA39A11B1AFDA43A002A0118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +174,7 @@
 				DA39A18A1AFFD7FA002A0118 /* Window Controller */,
 				DA39A13B1AFDA4C8002A0118 /* Models */,
 				DA39A13A1AFDA4BB002A0118 /* Views */,
+				DA2FB78C1B12459200053B9E /* PreferenceManager.swift */,
 				DA39A11B1AFDA43A002A0118 /* AppDelegate.swift */,
 				DA39A11D1AFDA43A002A0118 /* Images.xcassets */,
 				DA39A11F1AFDA43A002A0118 /* MainMenu.xib */,
@@ -363,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA2FB78D1B12459200053B9E /* PreferenceManager.swift in Sources */,
 				DA39A1861AFF1551002A0118 /* Deck.swift in Sources */,
 				DA39A1561AFE3787002A0118 /* RankCounter.swift in Sources */,
 				DA39A1801AFEB91B002A0118 /* PokerHandView.swift in Sources */,
@@ -423,6 +428,7 @@
 				DA39A1521AFDBEA7002A0118 /* CardList.swift in Sources */,
 				DA39A1741AFE8012002A0118 /* PokerHandEvaluation.swift in Sources */,
 				DA39A16B1AFE79B3002A0118 /* Hand.swift in Sources */,
+				DA2FB78E1B12459200053B9E /* PreferenceManager.swift in Sources */,
 				DAF3C6991B0BAFE900BA5053 /* SingleBettingMachine.swift in Sources */,
 				DA39A1611AFE42BB002A0118 /* RankComboCounter.swift in Sources */,
 				DA39A1441AFDA5AA002A0118 /* Card.swift in Sources */,

@@ -13,13 +13,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var difficultyMenu: NSMenuItem?
     @IBOutlet weak var easyMenu: NSMenuItem?
     @IBOutlet weak var normalMenu: NSMenuItem?
-
-    var mainWindowController: MainWindowController?
+    
+    private var mainWindowController: MainWindowController?
+    private let preferenceManager: PreferenceManager = PreferenceManager()
+    
+    private var easyDifficulty = true {
+        didSet {
+            self.mainWindowController?.easyDifficulty = easyDifficulty
+            preferenceManager.easyDifficulty = easyDifficulty
+            easyMenu?.state = easyDifficulty ? NSOnState : NSOffState
+            normalMenu?.state = easyDifficulty ? NSOffState : NSOnState
+        }
+    }
+    
+    // MARK: - Overriden NSApplicationDelegate methods
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         let mainWindowController = MainWindowController()
         mainWindowController.showWindow(self)
         self.mainWindowController = mainWindowController
+        easyDifficulty = preferenceManager.easyDifficulty
     }
     
     //  Terminate the app by the red button
@@ -31,19 +44,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
     }
+    
+    // MARK: - Menu actions
 
-    @IBAction func easyMenuSelected(sender: NSMenuItem) {
-        self.mainWindowController?.easyDifficulty = true
-        sender.state = NSOnState
-        normalMenu?.state = NSOffState
+    @IBAction func difficultyMenuOptionChanged(sender: NSMenuItem) {
+        if let easyMenu = easyMenu, normalMenu = normalMenu {
+            switch sender {
+            case easyMenu:
+                easyDifficulty = true
+                
+            case normalMenu:
+                easyDifficulty = false
+                
+            default:
+                fatalError("Unrecognized difficulty menu selection")
+            }
+        }
     }
     
-    @IBAction func normalMenuSelected(sender: NSMenuItem) {
-        self.mainWindowController?.easyDifficulty = false
-        sender.state = NSOnState
-        easyMenu?.state = NSOffState
-    }
-
     @IBAction func newGameSelected(sender: NSMenuItem) {
         self.mainWindowController?.resetGame()
     }

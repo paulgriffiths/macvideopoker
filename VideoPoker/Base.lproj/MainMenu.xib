@@ -81,12 +81,12 @@
                                     <items>
                                         <menuItem title="Easy" state="on" keyEquivalent="e" id="Aki-h6-axo">
                                             <connections>
-                                                <action selector="easyMenuSelected:" target="Voe-Tx-rLC" id="fhI-cM-OKe"/>
+                                                <action selector="difficultyMenuOptionChanged:" target="Voe-Tx-rLC" id="eJX-iD-AhQ"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Normal" keyEquivalent="n" id="3c9-V5-Z5N">
                                             <connections>
-                                                <action selector="normalMenuSelected:" target="Voe-Tx-rLC" id="deE-p4-v0Y"/>
+                                                <action selector="difficultyMenuOptionChanged:" target="Voe-Tx-rLC" id="luE-4L-D4U"/>
                                             </connections>
                                         </menuItem>
                                     </items>
