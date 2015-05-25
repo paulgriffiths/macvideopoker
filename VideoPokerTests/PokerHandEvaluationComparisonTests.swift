@@ -319,6 +319,34 @@ class PokerHandEvaluationComparisonTests: XCTestCase {
         XCTAssertGreaterThan(e1, e2)
     }
     
+    func testWheelStraightAgainstStraightSixHigh() {
+        let p1 = PokerHand(cards: Cards.SixDiamonds, Cards.FiveHearts, Cards.FourSpades,
+            Cards.ThreeClubs, Cards.TwoDiamonds)
+        let p2 = PokerHand(cards: Cards.FiveDiamonds, Cards.FourHearts, Cards.ThreeSpades,
+            Cards.TwoClubs, Cards.AceDiamonds)
+        
+        let e1 = PokerHandEvaluation(hand: p1)
+        let e2 = PokerHandEvaluation(hand: p2)
+        
+        XCTAssertEqual(PokerHands.Straight, e1.handType)
+        XCTAssertEqual(PokerHands.Straight, e2.handType)
+        XCTAssertGreaterThan(e1, e2)
+    }
+    
+    func testWheelStraightAgainstStraightAceHigh() {
+        let p1 = PokerHand(cards: Cards.TenClubs, Cards.JackHearts, Cards.QueenSpades,
+            Cards.KingDiamonds, Cards.AceClubs)
+        let p2 = PokerHand(cards: Cards.FiveDiamonds, Cards.FourHearts, Cards.ThreeSpades,
+            Cards.TwoClubs, Cards.AceDiamonds)
+        
+        let e1 = PokerHandEvaluation(hand: p1)
+        let e2 = PokerHandEvaluation(hand: p2)
+        
+        XCTAssertEqual(PokerHands.Straight, e1.handType)
+        XCTAssertEqual(PokerHands.Straight, e2.handType)
+        XCTAssertGreaterThan(e1, e2)
+    }
+    
     func testFlushAllSimilar() {
         let p1 = PokerHand(cards: Cards.KingClubs, Cards.JackClubs, Cards.NineClubs,
             Cards.SevenClubs, Cards.FiveClubs)

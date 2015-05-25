@@ -55,7 +55,12 @@ private func calculateScore(handType: PokerHands, counter: CardCounter) -> [Int]
         return []
         
     case .StraightFlush, .Straight:
-        return createScoreArray(counter.lowestRankByCount(1)!.value)
+        if counter.lowestRankByCount(1) == .Two && counter.highestRankByCount(1) == .Ace {
+            return createScoreArray(Rank.Five.value)
+        }
+        else {
+            return createScoreArray(counter.highestRankByCount(1)!.value)
+        }
         
     case .Four:
         return createScoreArray(counter.highestRankByCount(4)!.value, counter.highestRankByCount(1)!.value)
@@ -87,7 +92,7 @@ func <(first: PokerHandScore, second: PokerHandScore) -> Bool {
         return true
     }
     else {
-        for i in 0...2 {
+        for i in 0..<first.score.count {
             if first.score[i] < second.score[i] {
                 return true
             }
