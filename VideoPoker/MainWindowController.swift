@@ -56,7 +56,7 @@ class MainWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        if preferenceManager.pot == 0 {
+        if preferenceManager.pot == 0 || preferenceManager.pot == Int.max {
             preferenceManager.resetBetAndPot()
         }
         
@@ -96,21 +96,26 @@ class MainWindowController: NSWindowController {
                 }
                 
                 let win = winComputer.winRatioForHand(hand)
-                let winnings = machine.win(win.winRatio)
-                let winAmount: String = winFormatter.stringFromNumber(winnings)!
-                let winString = (winnings > 0 ? "You won \(winAmount)!" : "No win!")
                 
-                let nextString: String
-                if machine.isOutOfMoney {
-                    nextString = "Game over!"
-                    actionButton?.enabled = false
-                    betLabel?.editable = false
+                if let winnings = machine.win(win.winRatio) {
+                    let winAmount: String = winFormatter.stringFromNumber(winnings)!
+                    let winString = (winnings > 0 ? "You won \(winAmount)!" : "No win!")
+                    
+                    let nextString: String
+                    if machine.isOutOfMoney {
+                        nextString = "Game over!"
+                        endGame()
+                    }
+                    else {
+                        nextString = "Click \"\(actionButtonTitle)\" to play again."
+                    }
+                    
+                    statusMessage = "\(win.description)! \(winString) \(nextString)"
                 }
                 else {
-                    nextString = "Click \"\(actionButtonTitle)\" to play again."
+                    statusMessage = "\(win.description)! You maxed out the pot and won! Game over!"
+                    endGame()
                 }
-                
-                statusMessage = "\(win.description)! \(winString) \(nextString)"
             }
         }
         
@@ -141,6 +146,11 @@ class MainWindowController: NSWindowController {
                 self.window?.makeFirstResponder(betLabel)
             }
         }
+    }
+    
+    private func endGame() {
+        actionButton?.enabled = false
+        betLabel?.editable = false
     }
     
     private func badBetAlert(message: String) {

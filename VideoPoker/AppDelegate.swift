@@ -27,7 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    // MARK: - Overriden NSApplicationDelegate methods
+    // MARK: - NSApplicationDelegate methods
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         let mainWindowController = MainWindowController()

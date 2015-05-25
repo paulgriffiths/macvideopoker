@@ -34,5 +34,44 @@ class SingleBettingMachineTests: XCTestCase {
         XCTAssertEqual(0, machine.pot)
         XCTAssertTrue(machine.isOutOfMoney)
     }
+    
+    func testBetOverflows() {
+        let pot: Int = Int.max / 6
+        let bet: Int = Int.max / 6
+        let machine = SingleBettingMachine(pot: pot, defaultBet: bet)
+        
+        machine.bet(bet)
+        let winResult = machine.win(7)
+        XCTAssertTrue(winResult == nil)
+    }
 
+    func testBetDoesntOverflow() {
+        let pot: Int = Int.max / 6
+        let bet: Int = Int.max / 6
+        let machine = SingleBettingMachine(pot: pot, defaultBet: bet)
+        
+        machine.bet(bet)
+        let winResult = machine.win(5)
+        XCTAssertFalse(winResult == nil)
+    }
+    
+    func testPotOverflows() {
+        let pot: Int = Int.max - 100
+        let bet: Int = 90
+        let machine = SingleBettingMachine(pot: pot, defaultBet: bet)
+        
+        machine.bet(bet)
+        let winResult = machine.win(3)
+        XCTAssertTrue(winResult == nil)
+    }
+    
+    func testPotDoesntOverflow() {
+        let pot: Int = Int.max - 100
+        let bet: Int = 90
+        let machine = SingleBettingMachine(pot: pot, defaultBet: bet)
+        
+        machine.bet(bet)
+        let winResult = machine.win(2)
+        XCTAssertFalse(winResult == nil)
+    }
 }

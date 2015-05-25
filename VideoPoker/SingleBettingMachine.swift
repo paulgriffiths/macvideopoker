@@ -52,17 +52,46 @@ class SingleBettingMachine {
         betState = .BetInProgress
     }
     
-    func win(winRatio: Int) -> Int {
+    func win(winRatio: Int) -> Int? {
         precondition(betState == .BetInProgress, "Betting machine is not ready for a win")
         precondition(winRatio >= 0, "Win ratio must be greater than or equal to zero")
         
-        let amountWon = currentBet * winRatio
-        pot += amountWon
-        betState = (pot == 0 ? .OutOfMoney : .ReadyForBet)
-        if currentBet > pot {
-            currentBet = pot
+        if let amountWon = getWinningsWithBet(currentBet, winRatio: winRatio) {
+            if pot > (Int.max - amountWon) {
+                pot = Int.max
+                return nil
+            }
+            
+            pot += amountWon
+            betState = (pot == 0 ? .OutOfMoney : .ReadyForBet)
+            
+            if currentBet > pot {
+                currentBet = pot
+            }
+            
+            return amountWon
         }
-        return amountWon
+        else {
+            pot = Int.max
+            return nil
+        }
+    }
+    
+    private func getWinningsWithBet(bet: Int, winRatio: Int) -> Int? {
+        precondition(winRatio >= 0, "Win ratio must be greater than or equal to zero")
+        precondition(bet > 0, "Bet must be greater than zero")
+        
+        if winRatio == 0 {
+            return 0
+        }
+        else {
+            if bet > (Int.max / winRatio) {
+                return nil
+            }
+            else {
+                return bet * winRatio
+            }
+        }
     }
 
 }
