@@ -53,7 +53,7 @@ class PreferenceManager {
     }
     
     func registerDefaultPreferences() {
-        let defaults: [NSObject: AnyObject] = [difficultyKey: true, potKey: defaultPot, betKey: defaultBet]
+        let defaults: [String: AnyObject] = [difficultyKey: true, potKey: defaultPot, betKey: defaultBet]
         userDefaults.registerDefaults(defaults)
     }
     

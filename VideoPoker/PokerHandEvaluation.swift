@@ -15,7 +15,7 @@ func <(first: PokerHandEvaluation, second: PokerHandEvaluation) -> Bool {
     return first.score < second.score
 }
 
-struct PokerHandEvaluation: Equatable, Comparable, Printable {
+struct PokerHandEvaluation: Equatable, Comparable, CustomStringConvertible {
     let score: PokerHandScore
     let counter: CardCounter
     

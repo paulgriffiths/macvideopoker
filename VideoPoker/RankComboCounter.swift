@@ -47,7 +47,7 @@ struct RankComboCounter {
     
     func highestByCount(comboCount: Int) -> Rank? {
         if let count = counts[comboCount] {
-            return sorted(count).last
+            return count.sort().last
         }
         else {
             return nil
@@ -56,7 +56,7 @@ struct RankComboCounter {
     
     func secondHighestByCount(comboCount: Int) -> Rank? {
         if let count = counts[comboCount] {
-            let sortedRanks = sorted(count)
+            let sortedRanks = count.sort()
             if sortedRanks.count < 2 {
                 return nil
             }
@@ -71,7 +71,7 @@ struct RankComboCounter {
     
     func lowestByCount(comboCount: Int) -> Rank? {
         if let count = counts[comboCount] {
-            return sorted(count).first
+            return count.sort().first
         }
         else {
             return nil
@@ -89,7 +89,7 @@ struct RankComboCounter {
     
     func scoreByCount(comboCount: Int) -> Int? {
         if let count = counts[comboCount] {
-            return reverse(sorted(count)).reduce(0, combine: {$0! * Rank.numberOfRanks + $1.value})
+            return Array(count.sort().reverse()).reduce(0, combine: {$0! * Rank.numberOfRanks + $1.value})
         }
         else {
             return nil

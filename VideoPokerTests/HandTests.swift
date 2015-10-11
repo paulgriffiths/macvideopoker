@@ -29,7 +29,7 @@ class HandTests: XCTestCase {
         XCTAssertEqual(0, deck.discardsCount)
         XCTAssertEqual("[KD,QD,JD,TD,9D]", hand.description)
         
-        var exchangeArray = [1, 3]
+        let exchangeArray = [1, 3]
         hand.exchange(deck, exchangeArray: exchangeArray)
         XCTAssertEqual(5, hand.count)
         XCTAssertEqual(45, deck.count)

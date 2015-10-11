@@ -11,7 +11,7 @@ public func ==(first: Card, second: Card) -> Bool {
     return first.index == second.index
 }
 
-public struct Card: Equatable, Printable {
+public struct Card: Equatable, CustomStringConvertible {
     let rank: Rank
     let suit: Suit
     let index: Int

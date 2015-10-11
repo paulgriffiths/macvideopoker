@@ -72,7 +72,7 @@ class CardCounterTests: XCTestCase {
     }
 
     func testNumberRankByCount() {
-        for (index, count) in enumerate([0, 4, 3, 1, 0, 0, 0]) {
+        for (index, count) in [0, 4, 3, 1, 0, 0, 0].enumerate() {
             XCTAssertEqual(count, counter.numberRankByCount(index))
         }
     }
@@ -90,7 +90,7 @@ class CardCounterTests: XCTestCase {
     }
     
     func testHighestRankByCountWhenPresent() {
-        for (index, expectedRank) in enumerate([Rank.King, Rank.Ace, Rank.Nine]) {
+        for (index, expectedRank) in [Rank.King, Rank.Ace, Rank.Nine].enumerate() {
             if let rank = counter.highestRankByCount(index + 1) {
                 XCTAssertEqual(expectedRank, rank)
             }
@@ -109,7 +109,7 @@ class CardCounterTests: XCTestCase {
     }
     
     func testSecondHighestRankByCountWhenPresent() {
-        for (index, expectedRank) in enumerate([Rank.Queen, Rank.Six]) {
+        for (index, expectedRank) in [Rank.Queen, Rank.Six].enumerate() {
             if let rank = counter.secondHighestRankByCount(index + 1) {
                 XCTAssertEqual(expectedRank, rank)
             }
@@ -128,7 +128,7 @@ class CardCounterTests: XCTestCase {
     }
     
     func testLowestRankByCountWhenPresent() {
-        for (index, expectedRank) in enumerate([Rank.Three, Rank.Five, Rank.Nine]) {
+        for (index, expectedRank) in [Rank.Three, Rank.Five, Rank.Nine].enumerate() {
             if let rank = counter.lowestRankByCount(index + 1) {
                 XCTAssertEqual(expectedRank, rank)
             }
@@ -147,7 +147,7 @@ class CardCounterTests: XCTestCase {
     }
     
     func testRankRangeByCountWhenPresent() {
-        for (index, expectedRange) in enumerate([13 - 3, 14 - 5, 9 - 9]) {
+        for (index, expectedRange) in [13 - 3, 14 - 5, 9 - 9].enumerate() {
             if let range = counter.rankRangeByCount(index + 1) {
                 XCTAssertEqual(expectedRange, range)
             }
@@ -171,12 +171,12 @@ class CardCounterTests: XCTestCase {
         }
         
         let expectedScores = [
-            (sCmpt(Rank.King, 3) + sCmpt(Rank.Queen, 2) + sCmpt(Rank.Jack, 1) + sCmpt(Rank.Three, 0)),
-            (sCmpt(Rank.Ace, 2) + sCmpt(Rank.Six, 1) + sCmpt(Rank.Five, 0)),
-            (sCmpt(Rank.Nine, 0))
+            (sCmpt(Rank.King, index: 3) + sCmpt(Rank.Queen, index: 2) + sCmpt(Rank.Jack, index: 1) + sCmpt(Rank.Three, index: 0)),
+            (sCmpt(Rank.Ace, index: 2) + sCmpt(Rank.Six, index: 1) + sCmpt(Rank.Five, index: 0)),
+            (sCmpt(Rank.Nine, index: 0))
         ]
         
-        for (index, expectedScore) in enumerate(expectedScores) {
+        for (index, expectedScore) in expectedScores.enumerate() {
             if let score = counter.rankScoreByCount(index + 1) {
                 XCTAssertEqual(expectedScore, score)
             }

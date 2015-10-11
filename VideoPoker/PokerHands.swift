@@ -15,7 +15,7 @@ public func <(first: PokerHands, second: PokerHands) -> Bool {
     return first.rawValue < second.rawValue
 }
 
-public enum PokerHands: Int, Equatable, Comparable, Printable {
+public enum PokerHands: Int, Equatable, Comparable, CustomStringConvertible {
     case HighCard = 0
     case Pair
     case TwoPair

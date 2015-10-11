@@ -41,7 +41,7 @@ class Deck {
         precondition(numCards < store.count, "Cannot draw more cards then there are in the store")
         
         var list = CardList()
-        for i in 1...numCards {
+        for _ in 1...numCards {
             list.append(store.removeLast())
         }
         return list

@@ -52,7 +52,7 @@ final class PokerHandView: NSView {
     
     var flippedArray: [Int] {
         var array: [Int] = []
-        for (index, card) in enumerate(cards) {
+        for (index, card) in cards.enumerate() {
             if card.isFaceDown {
                 array.append(index)
             }
@@ -70,7 +70,7 @@ final class PokerHandView: NSView {
     
     private func resetCards() {
         if let hand = hand {
-            for (index, card) in enumerate(hand) {
+            for (index, card) in hand.enumerate() {
                 cards[index].cardIndex = card.index
                 cards[index].isFaceDown = false
             }

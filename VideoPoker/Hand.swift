@@ -7,7 +7,7 @@
 //  Distributed under the terms of the GNU General Public License. <http://www.gnu.org/licenses/>
 //
 
-class Hand: Printable, SequenceType {
+class Hand: CustomStringConvertible, SequenceType {
     private var cardList: CardList
     
     init(cardList: CardList) {

@@ -107,6 +107,6 @@ struct PokerHandScore: Equatable, Comparable {
     
     init(counter: CardCounter) {
         self.handType = calculateHandType(counter)
-        self.score = calculateScore(self.handType, counter)
+        self.score = calculateScore(self.handType, counter: counter)
     }
 }

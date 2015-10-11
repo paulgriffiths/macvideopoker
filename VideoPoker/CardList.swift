@@ -9,7 +9,7 @@
 
 import Darwin
 
-struct CardList: SequenceType, Printable {
+struct CardList: SequenceType, CustomStringConvertible {
     private var cards: [Card] = []
     
     init() {
@@ -17,7 +17,7 @@ struct CardList: SequenceType, Printable {
     }
     
     init(cards: Card...) {
-        self.cards.extend(cards)
+        self.cards.appendContentsOf(cards)
     }
     
     init(cards: Cards...) {
@@ -27,7 +27,7 @@ struct CardList: SequenceType, Printable {
     }
     
     init(cards: [Card]) {
-        self.cards.extend(cards)
+        self.cards.appendContentsOf(cards)
     }
     
     init(cards: [Cards]) {
@@ -72,7 +72,7 @@ struct CardList: SequenceType, Printable {
     }
     
     mutating func append(cardList: CardList) {
-        cards.extend(cardList.cards)
+        cards.appendContentsOf(cardList.cards)
     }
     
     mutating func removeLast() -> Card {

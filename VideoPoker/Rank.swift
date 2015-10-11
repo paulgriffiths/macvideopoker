@@ -15,7 +15,7 @@ public func <(first: Rank, second: Rank) -> Bool {
     return first.value < second.value
 }
 
-public enum Rank: Int, Equatable, Comparable, Printable {
+public enum Rank: Int, Equatable, Comparable, CustomStringConvertible {
     case Two = 2
     case Three
     case Four
